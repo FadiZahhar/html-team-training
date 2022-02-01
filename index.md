@@ -1,8 +1,13 @@
-## Welcome to GitHub Pages
+## Welcome to basic HTML5 and CSS3 training
 
-You can use the [editor on GitHub](https://github.com/FadiZahhar/html-team-training/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+this training will cover all basic HTML5 and CSS3.
+objective of this training is to complete the following 11 hours course step by step
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/672277535?h=20c0fc34fa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="HTML &amp;amp; CSS Tutorial"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+once done you need to write what you learned with a summary using the Markdown language
+
+below is the markdown language sample 
 
 ### Markdown
 
