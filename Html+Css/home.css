@@ -1,0 +1,123 @@
+*{
+ margin: 0;
+box-sizing: border-box;}
+
+.nav{
+background-color: #454b5e;
+height: 4rem;
+color: white;
+font-size: 3rem;
+font-family: sans-serif;
+font-weight: bold;
+text-align: right;
+}
+.section2{
+ background-color: beige;
+ /* height: calc(100vh - 6rem); */
+height: 100vh  ;
+
+ font-size: 20px;
+ overflow: hidden;
+ overflow: scroll;
+ background-attachment: fixed;
+
+}
+
+.section1{
+ background-image: url("../images/Home1.jpg");
+ /* height: calc(100vh - 6rem); */
+ min-height: calc( 100vh - 4rem) ;
+ font-size: 20px;
+ background-repeat: round;
+ /* background-repeat: no-repeat;
+background-size: cover;
+background-position: center; */
+background-attachment: fixed;
+
+
+}
+.section1-1{
+ background-image: url("../images/section1-1.jpg");
+ /* height: calc(100vh - 6rem); */
+height:100vh  ;
+background-attachment: fixed;
+
+ /* background-repeat: round; */
+ background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+text-align: center;
+align-items: center;
+justify-content: center;
+text-transform: uppercase;
+border: 2px solid;
+}
+
+a{
+ font-size: 14px;
+ text-shadow: rebeccapurple;
+ color: white;
+ padding: 20px;
+ margin-bottom: 20px;
+ /* border: solid rgb(219, 211, 211);
+ border-end-end-radius: 80px;
+ border-start-start-radius:80px;
+ border-start-end-radius: 80px;
+ border-end-end-radius: 80px;
+ border-end-start-radius:80px; */
+
+
+}
+
+h1{
+ padding: 20px 40px;
+color: black;
+
+}
+.robots{
+ background-color: #727171;
+ padding: 20px 40px;
+ color: white;
+ color: black;
+ border-style: solid;
+ margin: 30px 30px;
+ outline-offset: -6px;
+ outline-style: solid;
+ outline-color: rosybrown;
+
+}
+span{
+ background-color: gray;
+}
+.block{
+display: inline;
+}
+ul li a{
+ list-style-type: lower-alpha;
+ display: block;
+ background-color: rgb(139, 139, 175);
+ 
+}
+.border-box2,
+.border-box3,
+.border-box4{
+ width: 200px;
+ height: 200px;
+ color: white;
+}
+.border-box2{
+ padding-left: 40px;
+ background-color: red;
+}
+.border-box3{
+ background-color: rgb(141, 90, 90);
+}
+.border-box4{
+ background-color: rgb(15, 102, 90);
+}
+.float {
+ float: right;
+}
+.clear{
+clear:right;
+}
