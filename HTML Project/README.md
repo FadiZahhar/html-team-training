@@ -1,4 +1,4 @@
-# Introduction to HTML and CSS
+# Introduction to HTML
 
 ## Description
 
@@ -80,8 +80,11 @@ The first, and perhaps most important, file we created is index.html, which is t
      The (for) attribute of the <label> tag should be equal to the (id) attribute of the <input> element to bind them together.
 
 `<form>`
+`<br>`
 `<input type="text" id="html" name="fav_language" value="HTML">`
+`<br>`
 `<label for="html">HTML</label>`
+`<br>`
 `</form>`
 
 ## Learning Objectives
