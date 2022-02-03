@@ -1,13 +1,12 @@
-#Introduction to HTML and CSS
-![HTML logo](./images/html.png)
+# Introduction to HTML and CSS
 
-##Description
+## Description
 
 Welcome all, This project shows the first steps in the journey towards a career in full-stack web development. Every full-stack web developer must master **HTML** and **CSS**. Thats why in my project I’m covering the most basic topics in HTML to create a well structured webpage.
 
 The first, and perhaps most important, file we created is index.html, which is the default entry point for any web application. All of our subsequent work will build on this initial starting point. The file suffix .html refers to **HTML**, or **Hypertext Markup Language**. HTML allows us to format webpages and text in a similar way to how a word processor formats documents and the text inside them
 
-##key topics
+## key topics
 
 1- HTML structure:
 
@@ -65,17 +64,17 @@ The first, and perhaps most important, file we created is index.html, which is t
     An HTML form is used to collect user input. The user input is most often sent to a server for processing.
     The HTML <form> element is used to create an HTML form for user input
 
--The <input> Element
+-The `<input>` Element
 
-| Type                    |               Description               |
-| ----------------------- | :-------------------------------------: |
-| <input type="text">     | Displays a single-line text input field |
-| <input type="radio">    |         Displays a radio button         |
-| <input type="checkbox"> |           Displays a checkbox           |
-| <input type="submit">   |        Displays a submit button         |
-| <input type="button">   |       Displays a clickable button       |
+| Type                      |               Description               |
+| ------------------------- | :-------------------------------------: |
+| `<input type="text">`     | Displays a single-line text input field |
+| `<input type="radio">`    |         Displays a radio button         |
+| `<input type="checkbox">` |           Displays a checkbox           |
+| `<input type="submit">`   |        Displays a submit button         |
+| `<input type="button">`   |       Displays a clickable button       |
 
--The <label> Element:
+-The `<label>` Element:
 
      The <label> tag defines a label for many form elements.
      The (for) attribute of the <label> tag should be equal to the (id) attribute of the <input> element to bind them together.
@@ -85,7 +84,7 @@ The first, and perhaps most important, file we created is index.html, which is t
 `<label for="html">HTML</label>`
 `</form>`
 
-##Learning Objectives
+## Learning Objectives
 
 - Build a main HTML structure of every webpage
 - Include and link images in our HTML pages and their special attributes.
@@ -94,7 +93,7 @@ The first, and perhaps most important, file we created is index.html, which is t
 - Unordered and ordered list, list items and nested list.
 - Input Forms (labels, inputs, submission..)
 
-##Helpful Links
+## Helpful Links
 
 [Youtube tutorial](https://www.youtube.com/watch?v=-8ORfgUa8ow)
 [W3school learnings](https://www.w3schools.com/html/default.asp)
