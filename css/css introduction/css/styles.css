@@ -1,0 +1,68 @@
+.green {
+  color: green;
+}
+.red {
+  color: red;
+  background: gray;
+}
+#title {
+  font-size: 50px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+div {
+  color: red;
+  background: black;
+}
+
+/* h2 {
+  color: red;
+  font-size: 40px;
+} */
+
+/* css rule */
+
+/* selector 
+
+h1,
+h2,
+p {
+  color: green;
+  font-size: 30px;
+}
+
+*/
+
+/* id selector
+
+#header {
+  color: green;
+  font-size: 30px;
+  background: black;
+}
+#footer {
+  color: red;
+  font-size: 30px;
+}
+
+*/
+
+/* class selector
+
+.green {
+  color: green;
+  font-size: 30px;
+  background: black;
+}
+.red {
+  color: red;
+  font-size: 30px;
+}
+
+*/
+
+/* declaration block */
+/* declaration */
+/* property */
+/* value */ ;
