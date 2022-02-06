@@ -141,12 +141,13 @@ CSS has several different units for expressing a length.
 The CSS box model is essentially a box that wraps around every HTML element.
 
 It consists of: margins, borders, padding, and the actual content.
-1- padding: Clears an area around the content.
-2- margin: Clears an area around the content.
-3- border: A border that goes around the padding and content.
-border: 15px solid green;
-4- border-radius: Defines the radius of the element's corners
-5- box-sizing: allows us to include the padding and border in an element's total width and height.
+
+- padding: Clears an area around the content.
+- margin: Clears an area around the content.
+- border: A border that goes around the padding and content.
+  border: 15px solid green;
+- border-radius: Defines the radius of the element's corners
+- box-sizing: allows us to include the padding and border in an element's total width and height.
 
 ### Specificity:
 
@@ -182,4 +183,5 @@ To select elements with a specific class, write a period (.) character, followed
 
 ## Helpful Links
 
-[URL](https://www.youtube.com/watch?v=-8ORfgUa8ow)
+[youtube tutorial](https://www.youtube.com/watch?v=-8ORfgUa8ow)
+[w2school tutorials](https://www.w3schools.com/css/)
