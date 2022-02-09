@@ -1,0 +1,120 @@
+.hover {
+  width: 20vw;
+  margin: 200px auto;
+  position: relative;
+}
+.hover img {
+  width: 100%;
+  display: block;
+}
+
+.hover::before {
+  content: "";
+  border: 3px solid black;
+  background: rgba(255, 255, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -60px;
+  left: -60px;
+  z-index: -2;
+  transition: all 1s linear;
+}
+
+.hover::after {
+  content: "";
+  background: rgba(44, 1, 187, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: -30px;
+  left: -30px;
+  z-index: -1;
+  transition: all 1s linear;
+}
+
+.hover:hover::after,
+.hover:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  background: red;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  position: sticky;
+  margin-top: 100px;
+  top: 0;
+  width: 100%;
+}
+div {
+  border: 3px solid red;
+  background: yellow;
+  margin-top: 40px;
+}
+.one {
+  background: blue;
+  color: white;
+
+  top: 0;
+  left: 0;
+}
+.two {
+  background: green;
+  color: white;
+}
+.special {
+  background: pink;
+  font-size: 20px;
+  color: #222;
+  top: 0;
+  left: 0;
+}
+body {
+  position: relative;
+}
+
+.container {
+  min-height: 50vh;
+  background: blue;
+}
+
+.transform img {
+  width: 200px;
+  height: 200px;
+  background: red;
+  transition: width 2s;
+  /* transition-timing-function: linear; */
+  transition-timing-function: ease-in-out;
+}
+
+.transform img:hover {
+  width: 300px;
+  position: absolute;
+  border: 3px solid red;
+}
+.transform:hover {
+  background: green;
+  position: relative;
+  border: none;
+  background-size: cover;
+}
+.transform {
+  border: none;
+  background: white;
+}
+/* .scal {
+  border: none;
+  background: white;
+  width: 300px;
+  height: 200px;
+  margin-top: 500px;
+  transform: scaleX(0.5);
+}
+.scal img {
+  transform: scaleX(0.5);
+} */

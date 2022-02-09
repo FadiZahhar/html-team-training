@@ -1,0 +1,154 @@
+html
+
+we need to setup the VS code setting and extentions
+for image we need to save it in a separated folder and to reference their properly plus to add the alt(alternative souce) name for their
+for image wwe need to setupt the width and heigh 
+emply space in html does not mean emply space in real page <br> for epmty line
+for internal and external source we need to write target="_blank" to be openned in new page
+using sup and sub
+using strong and em
+using ordred/unordered/selted list ol-ul-ul+ul/ol
+table tr(table row)  td(table column) th(table head)
+form input-button type:text password email/ name for lable/ value for value/ id for id
+type radio/ same name to select only 1 item /value and id
+checkbox/ same name to select 1 or more items /value and id
+select input / one name-id/ multilpe options vith different values
+
+
+
+
+
+github
+
+clone repository
+git clone https://github.com/FadiZahhar/html-team-training
+
+gh repo clone FadiZahhar/html-team-training
+
+
+
+creact new branch
+1- cd html-team-training/    go to directory of the repository
+Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
+
+2- $ git pull
+Create the branch on your local machine and switch in this branch :
+
+3- $ git checkout -b [name_of_your_new_branch]
+Push the branch on github :
+
+4- $ git push origin [name_of_your_new_branch]
+When you want to commit something in your branch, be sure to be in your branch. Add -u parameter to set-upstream.
+
+5- You can see all the branches created by using :
+
+$ git branch -a
+
+
+
+
+
+
+
+
+css
+inline- same line (inside h1 and other element), internal inside the page in style, external in in css file and inside a link in the head
+inline style overrigth the internal style and internal style overrigth the external style
+inline style >> internal style >> external style
+
+
+
+cli
+
+-go to branch
+****  cd .\html-team-training
+
+-check the default branches
+  **** git status
+On branch gh-pages
+
+Your branch is up to date with 'origin/gh-pages'.
+
+-check the branches list
+ **** git branch --list
+* gh-pages
+
+create new branch
+  **** git branch Ali_html_team_training
+
+-check branch 
+
+****  git branch --list
+
+  Ali_html_team_training
+* gh-pages
+
+-make the default branch
+
+**** git checkout  Ali_html_team_training
+Switched to branch 'Ali_html_team_training'
+
+
+**** git branch
+* Ali_html_team_training
+  gh-pages
+
+
+
+- check files if up to date
+**** git status
+On branch Ali_html_team_training
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        html/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+-add files
+*** git add .
+
+
+
+
+- check files if up to date
+**** git status
+On branch Ali_html_team_training
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   html/about.html
+        new file:   html/images/udemy.png
+        new file:   html/index.html
+
+-commit new files
+*** git commit -m "html files"
+[Ali_html_team_training cc3dff1] html files
+ 3 files changed, 136 insertions(+)
+ create mode 100644 html/about.html
+ create mode 100644 html/images/udemy.png
+ create mode 100644 html/index.html
+
+
+- push 
+*** git push
+fatal: The current branch Ali_html_team_training has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Ali_html_team_training
+
+-final push 
+**** git push --set-upstream origin Ali_html_team_training
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 3.20 KiB | 364.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Ali_html_team_training' on GitHub by visiting:
+remote:      https://github.com/FadiZahhar/html-team-training/pull/new/Ali_html_team_training
+remote:
+To https://github.com/FadiZahhar/html-team-training.git
+ * [new branch]      Ali_html_team_training -> Ali_html_team_training
+Branch 'Ali_html_team_training' set up to track remote branch 'Ali_html_team_training' from 'origin'.
+PS C:\Users\96179\Desktop\html-team-training>

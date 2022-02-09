@@ -1,0 +1,210 @@
+
+
+css
+inline- same line (inside h1 and other element), internal inside the page in style, external in in css file and inside a link in the head
+inline style overrigth the internal style and internal style overrigth the external style
+inline style >> internal style >> external style
+
+/* css rule */
+/* selector */
+/* declaration block */
+/* declaration */
+/* property */
+/* value */
+
+****class used for multiple item, id for only 1 item
+selector h1 or h2 or p, grouping (h1,h2,p...),
+
+****div used to group multible elements
+****span used to group inline content
+
+****last rules ex: 
+p {
+color:red
+} 
+
+p {
+color:green
+} 
+
+last rule will bw applied so the color will be green
+
+
+****specificity
+id>>class>>element
+ex: 
+
+h1{
+color:yellow
+}
+red {
+color:red
+} 
+
+grenn {
+color:green
+} 
+<h1 class:"red" id="green"><h1>  the color will be green
+
+
+**** universal selector
+*{
+coclor:red
+}
+all element will be colored on red except whos was already have any css 
+
+property: backgroud can be used as backgroud_image and background_color
+
+color cas be set by using hex, rgb or name
+
+
+***** pixel absolute value one dot on the screen  px
+***** % relative unit/value   depends on the parent
+***** 1 em depends on font-size , 1 rem = 16 px
+***** viewport unit, vh height precent of the screen , vw width precent of the screen
+***** calc ex: calc(100 vw - 100px) 
+***** overflow : hidden to hide the overflow or scroll to be scrollable
+***** min-height to set ta minimum value for the height, if need more it will be more
+***** maxheight to set ta maxumumvalue for the height that cant be breaken
+***** font-family the browzer take the 1st font in the family witch it support
+***** google font, write tle link inside the html head and use it in css as normal
+***** font-weight:lighter,bold/ font-style:italic,oblic 
+***** text-allign: center, right,left
+***** text-indent : ex 50px, 3rem  to create a space befor the text
+***** line-height: distance between line, can be number in this case it will be a multiple of font size of the text, or px, or rem
+***** letter-spacing: space between the letters, ex: 5px, 0.5rem
+***** word-spacing: space between the words, ex: 5px, 0.5rem
+***** text-transform: ex uppercase, lowercase, capitalize
+***** text-decoration: decorate the text ex: underline, none, dotted, overline
+
+
+
+
+***** css box model 
+
+***** margin is the distance between the element and the screen or between element and other element
+      margin can be used as negative value 
+      and can be set to auto to centrelize the content
+      we can set margin-right to auto to put the block in the right and this rule apply to all directions
+
+***** padding is the distance betwen the content of the element and the border of the element
+***** padding top bottom left right, can be used padding-top or padding-left 20px 
+      or padding 40px this with padd from all sides 40px
+      or padding 30px 40px top and bottom 30, left and right 40 
+      or padding 30px 40px 50px 20px: top 30px, right:40px, bottom:50px and left:20px consecutivly
+      same for margin
+
+***** border-style, border-width, border color
+      or we can use border: width style coclor ec border: 3px dashed black
+      or we can use border-bootom or border-top or ...: width style coclor ec border-bottom: 3px dashed black
+      or we can use border-bootom-style, border-bootom-width, border-bootom-color
+
+***** border-radius control the edges of the border 
+***** outline is like border but can have offset + or -
+***** ex: outline: 0.2rem solid red; outline-offset: -5px; outline-width: 0.2rem; outline-color: #222; outline-style: solid; outline-offset: 10px;
+
+
+
+
+***** display property 6:49
+
+***** display
+      Elememts have it set by default
+      *Block: Always starts new line and spans full width
+       block: browser respects width,height  top/bootom margin
+      *Inline: Does not start new line and spans only content
+       inline: browser does not respects width,height  top/bootom margin
+      *Inline-block: Always does not starts new line
+       Inline-block: browser respects width,height   margin
+***** div, h, p have block display property
+***** span, a, and img have inline display property
+      display:block, inline, inline-block
+      
+***** display :none - remove from the flow , hide element collapse the space 
+***** opacity :0, visibility :hidden  - hides the element preserves the space 
+
+***** horizontal centering
+      descendant selectors ex: ul li {...} : in the case we select onlie the li inside the ul
+
+***** box styling
+      box-sizing: content-box the padding will be added to the size of the box
+      box-sizing: content-box: border-box the padding will be from the size of the box
+
+
+**** image 
+**** backgroud: url("path")
+**** background-repeat: 
+     repeat : default value
+     no-repeat : no repeat
+     repeat-x :  repeat in x direction
+     repeat-y: repeat in y direction
+     round : fill the hole image as many time can be filled
+**** background-size:
+     contain: set the image and then if its be enough space it fill another one 
+     cover: cover the hole div with the background image
+**** background-position:center, left, right, bottom, top, or we can use % for x and y axes ex: 0 20% or 10% 30%
+**** background-attachment: default scroll , fixed it will fix the image background position
+
+
+**** background: linear-gradient
+    (to bootom or top or left or right or degree (45deg) or to top right, top left , ...
+    , red 10%, blue, yellow) or use rgba()
+    ex:  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5)),
+    url("./images/big.jpeg") center/cover no-repeat fixed;
+
+    we can right : background: inear-gradient() , url() position/size repeat attachment
+
+
+
+
+**** CSS Tutorial
+**** float: to make the img in the specific position : left right 
+**** clear right, left, both
+**** position by default static
+     -position: absolution- relative to the parent with position relative
+     -position: fixews -relative to viewport(screen), stays as we are scrolling
+     will use other content to fill out the space
+     -position: sticky - toggles between relative and fixed once the position is met in the viweport - then it sticks
+      one of the value : top, right, bottom, left
+**** media-queries
+     min-width: start from
+     max-width: up to
+     ///////  @media screen and (min-width: 576px) {
+     body {
+     background: red;
+          }                                        
+     }
+              @media screen and (max-width: 576px) {
+     body {
+       background: red;
+          }
+     }
+     //////
+
+
+**** z-index  : z-axis
+     0 default
+     does not work on position :static
+
+
+**** ::before  ::after  pseudo elements
+     create element and insert before and after content
+     content:"" required
+     img does not work
+
+
+
+
+
+
+**** More Selectors
+**** descendant and child selectors: 
+     div h1{...} in this case we will target all the h1 inside the div
+     div > h1{...} in this case we will target all the h1 having a direct parent div
+
+**** p::first-line , p::first-letter
+**** :hover- when he hover the mose on the element
+**** :link- unvisited link with href
+**** :visited- visited link
+**** :active- as the user clicks
+**** a- all links 

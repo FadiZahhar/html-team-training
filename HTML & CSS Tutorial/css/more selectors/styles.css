@@ -1,0 +1,45 @@
+/* 
+descendant and child selectors
+*/
+
+/* div h1 {
+  background: red;
+  color: black;
+}
+
+div > h1 {
+  color: white;
+} */
+
+/* p::first-line {
+  font-weight: bold;
+}
+
+p::first-letter {
+  font-size: 2rem;
+} */
+
+/* 
+div:hover {
+  color: red;
+}
+
+.header:hover {
+  color: green;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background: yellowgreen;
+  text-decoration: none;
+  font-size: 5rem;
+  transition: 3s;
+} */
+
+a {
+  display: block;
+  background: black;
+  color: white;
+  font-size: 2rem;
+  margin: 10px;
+}
