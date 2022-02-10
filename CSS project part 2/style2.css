@@ -92,9 +92,6 @@ a:active {
 a:visited {
   color: aqua;
 }
-a:link {
-  color: white;
-}
 
 #transform {
   background-color: red;

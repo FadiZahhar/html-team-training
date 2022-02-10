@@ -31,25 +31,25 @@ The first, and perhaps most important, file we created is index.html, which is t
     Span and div are both generic HTML elements that group together related parts of a web page.
     However, a div element is used for **block-level** organization and styling of page elements, whereas a span element is used for **inline** organization and styling.
 
-3- Attrubites:
-
-    Attributes provide additional information about elements
-    Attributes usually come in name/value pairs like: name="value"
-    Each HTML element have a specific attribute.
-
-4- Links:
-
-    HTML links are hyperlinks
-    You can click on a link and jump to another document
-    The HTML <a> tag defines a hyperlink
-
-5- Images:
+    3- Images:
 
     Images can improve the design and the appearance of a web page.
     The <img> tag has two required attributes:
 
       src - Specifies the path to the image
       alt - Specifies an alternate text for the image
+
+4- Attrubites:
+
+    Attributes provide additional information about elements
+    Attributes usually come in name/value pairs like: name="value"
+    Each HTML element have a specific attribute.
+
+5- Links:
+
+    HTML links are hyperlinks
+    You can click on a link and jump to another document or a site or to a part of the same page
+    The HTML <a> tag defines a hyperlink
 
 6- Lists:
 
@@ -80,11 +80,8 @@ The first, and perhaps most important, file we created is index.html, which is t
      The (for) attribute of the <label> tag should be equal to the (id) attribute of the <input> element to bind them together.
 
 `<form>`
-`<br>`
 `<input type="text" id="html" name="fav_language" value="HTML">`
-`<br>`
 `<label for="html">HTML</label>`
-`<br>`
 `</form>`
 
 ## Learning Objectives
