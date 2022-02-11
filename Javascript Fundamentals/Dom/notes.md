@@ -668,4 +668,5 @@ const newDate = new Date('3/20/2021'); // month-day-year
 
 document.body.innerHTML = ([`<h1>${sentence}</h1>`, `<h3>${newDate}</h3>`]).join('');
 
+<h1>DOM</h1>
 </body>

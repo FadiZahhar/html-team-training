@@ -1,23 +1,28 @@
-// reduce
-// iterates, callback functions
-// reduces to a single value - number, array, object
-// 1 parameter ('acc') - total of all calculation
-// 2 parameter ('curr') - current iteration/value
+// Date
 
+const monthNames = ["January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"];
 
-const people = [
-    { name: 'Alaa', age: 32, position: 'Doctor', id: 1, salary: 2000 }
-    ,
-    { name: 'Ali', age: 30, position: 'Full Stack Developer', id: 1, salary: 2500 },
-    { name: 'Nour', age: 25, position: 'Front-End Developer', id: 2, salary: 1560 },
-    { name: 'Fatima', age: 23, position: 'Front-End Developer', id: 3, salary: 1560 }
-]
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-const total = people.reduce(function (acc, curr) {
-    console.log(`total :${acc}`);
-    console.log(`current :${curr.salary}`);
-    acc += curr.salary;
-    return acc;
-}, 0)
+const date = new Date() // full date
+console.log(date);
 
-console.log(total);
+const month = date.getMonth() // month index [0 .. 11]
+console.log(monthNames[month]);
+
+const day = date.getDay() // day index [0 .. 6]
+console.log(dayNames[day]);
+
+const current_date = date.getDate() // date index [0 .. 31]
+console.log(current_date);
+
+const year = date.getFullYear() // year
+console.log(year);
+
+const sentence = `${dayNames[day]}, ${date.getDate()} ${monthNames[month]} ${date.getFullYear()}.`
+
+console.log(sentence);
+const newDate = new Date('3/20/2021'); // month-day-year
+
+document.body.innerHTML = ([`<h1>${sentence}</h1>`, `<h3>${newDate}</h3>`]).join('');
