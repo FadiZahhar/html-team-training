@@ -162,4 +162,65 @@ console.log("wrong values");
 
 ---
 
+// switch
+// dice values: 1-6
+
+const dice = 1;
+
+switch (dice) {
+case 1:
+console.log("you got one");
+break;
+case 2:
+console.log("you got one");
+break;
+case 3:
+console.log("you got three");
+break;
+case 4:
+console.log("you got four");
+break;
+case 5:
+console.log("you got five");
+break;
+case 6:
+console.log("you got six");
+break;
+default:
+console.log("you didnt got yhe dice");
+
+}
+
+---
+
+---
+
+// loop
+// while loop
+// do while loop
+// code block first, condition second
+// run at least
+// for loop
+
+// while
+let amount = 10;
+while (amount > 0) {
+console.log('I have ' + amount + ' $');
+amount--;
+}
+
+// do while
+// it run at least one time even if condition does not satisfy
+let count = 15;
+do {
+console.log('I have ' + count + ' $');
+count++;
+} while (count < 10);
+
+// for loop
+
+for (let i = 0; i <= 10; i++) {
+console.log('You are in the floor number ' + i + '.');
+}
+
 ---

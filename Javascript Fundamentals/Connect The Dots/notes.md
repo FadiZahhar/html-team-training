@@ -1,0 +1,477 @@
+<style> 
+li{
+background:red;
+position: relative;
+
+}
+ol{
+position: relative;
+}
+</style>
+<body>
+
+<h2>This is bold text<h2>
+
+<ol>
+    <li>
+       This text is italicized
+    </li>
+    <li>
+      All this text is important
+    </li>
+</ol>
+
+<p>All this text is important</p>
+<h1>The end</h1>
+
+</body>
+
+basics
+let
+const
+var
+
+- - - / % ()
+      module
+
+implicit type conversion
+ex:
+'10' - '5' : 5
+'15' / '2': 7.5
+but '5' + 15 : '515' since its like string concatination
+
+input type number only ensure to enter number but the type of this nunber still a string, to prevent that we use: let num= parseInt(value);
+
+data type 7:
+primitive:
+string : const text ="some text" ; typeof text = string
+number : const num = 45; typeof num = number
+boolean : const bool = true; typeof bool = boolean
+null : const result = null; typeof null = object
+undefined : let name; typeof null = undefined; this is a bug ans it wil be not fixed since its start from the launch of JS and many code are based on it
+symbol
+object: array, function, object
+
+array:
+array: const friends = ["ali",2,"fadi",null];
+console.log(friends[0]): 'ali'; arrays are 0 index
+reassign value: friends[1]="rayan"; console.log(friends[1]): 'rayan'
+
+functions: declare, invoke
+declairation:
+function calculate(value) {
+const newValue = value \* 2.54;
+console.log("the value in cm is : " + newValue + " cm.")
+return newValue;
+}
+or
+const newcalculate=function(value) {
+const newValue = value \* 2.54;
+console.log("the value in cm is : " + newValue + " cm.")
+return newValue;
+}
+// function expression
+
+invoke:
+calculate(150)
+newcalculate(50)
+
+---
+
+//object
+const person = {
+name: 'Ali',
+age: 30,
+married: false,
+friends: ['fady', 'fatima', 'nour', 'rayan', 'lamies', 'lora', 'anthony'],
+//greeting(){} or
+greeting: function () {
+console.log("Hello from " + this.name);
+return 2;
+}
+}
+const val = person.greeting()
+console.log(val);
+
+---
+
+---
+
+// conditional statment
+// < , > , >= , <= , == , === , != , !==
+// if else if else !
+// == check value === check value and type
+
+// const num1 = 17;
+// const num2 = 17;
+
+// if (num1 > num2) {
+// console.log(num1 + " bigger than " + num2);
+// }
+// else if (num2 > num1) {
+// console.log(num2 + " bigger than " + num1);
+// }
+// else {
+// console.log(num1 + " equal to " + num2);
+// }
+
+num1 = 10;
+num2 = '10';
+num3 = 20;
+num4 = 20;
+const validation = function (number1, number2) {
+if (number1 == number2) {
+console.log('first number and second one are equal')
+}
+else if (number1 != number2) {
+console.log('first number and second one are not equal')
+}
+
+    if (number1 === number2) {
+        console.log('first number and second one having the same type')
+    }
+    else if (number1 !== number2) {
+        console.log('first number and second one are from different type')
+    }
+
+}
+
+validation(num1, num2)
+validation(num3, num4)
+
+---
+
+---
+
+// logical operators
+// (|| - or) , (&& - and)
+
+const name = "Ali";
+const age = 30;
+
+if (name === "Ali" && age === 30) {
+console.log("Name and age matches");
+}
+else if (name === "Ali" || age === 30) {
+console.log("Some value matches");
+}
+else {
+console.log("wrong values");
+}
+
+---
+
+---
+
+// switch
+// dice values: 1-6
+
+const dice = 1;
+
+switch (dice) {
+case 1:
+console.log("you got one");
+break;
+case 2:
+console.log("you got one");
+break;
+case 3:
+console.log("you got three");
+break;
+case 4:
+console.log("you got four");
+break;
+case 5:
+console.log("you got five");
+break;
+case 6:
+console.log("you got six");
+break;
+default:
+console.log("you didnt got yhe dice");
+
+}
+
+---
+
+---
+
+// loop
+// while loop
+// do while loop
+// code block first, condition second
+// run at least
+// for loop
+
+// while
+let amount = 10;
+while (amount > 0) {
+console.log('I have ' + amount + ' $');
+amount--;
+}
+
+// do while
+// it run at least one time even if condition does not satisfy
+let count = 15;
+do {
+console.log('I have ' + count + ' $');
+count++;
+} while (count < 10);
+
+// for loop
+
+for (let i = 0; i <= 10; i++) {
+console.log('You are in the floor number ' + i + '.');
+}
+
+---
+
+<body>
+<h1>Connect The Dots</h1>
+
+<h2>string property and methods</h2>
+
+// string property and methods.
+// wrapper string object, don't memorize methods
+
+const person = {
+name: 'Ali',
+age: 30,
+married: false,
+greeting() { console.log('Hello from ' + this.name + " !!!") },
+education: true
+}
+
+person.greeting();
+console.log(person.name.length); // the length of the text
+console.log(person.name.toLowerCase()); // to lower case
+console.log(person.name.toUpperCase()); // to upper case
+console.log(person.name.charAt(1)); // print the char of index 1
+console.log(person.name.toUpperCase().charAt(1)); // print the char of index 1 after upper case
+console.log(person.name.charAt(person.name.length - 1)); // print the last char
+console.log(person.name.indexOf('A')); // print the first index of char "A"
+let text = " Ali El-Helbawi";
+console.log(text);
+console.log(text.trim()); //trim the spaces from the start and the end
+console.log(text.startsWith("ali")); // boolean true start with 'ali'
+console.log(text.trim().toLowerCase().startsWith('ali')); // boolean true if after trim and to lower case start with 'ali'
+console.log(text.includes('li')); // boolean true if include 'li'
+console.log(text.slice(0, 3)); // char from index 0 to index 3-1: 2
+console.log(text.slice(-3)); // last 3 char
+
+// template literals - ES6+
+// backtick characters `` - above tab (left from one)
+// interpolatio ${} - insert expression value
+const friend = 'Alaa';
+
+const carOwner = "This it's not " + friend + "'s car";
+console.log(carOwner);
+
+const newCarOwner = `This it's not ${friend}'s car.\nShe is ${20 + 12} years old.`;
+console.log(newCarOwner);
+
+<h2>array property and methods</h2>
+
+// array property and methods
+
+let names = ['Ali', "Alaa", 3, -45, false];
+
+// length
+console.log(names.length);
+console.log(names[0]);
+console.log(names[names.length - 1]);
+
+// concat concat 2 array
+const lastNames = ['Karkaba', 'El-Helbawi'];
+const allNames = names.concat(lastNames)
+console.log(allNames);
+
+// reverse reverse the array
+console.log(allNames.reverse());
+
+// unshift add item to the beginning of the array
+allNames.unshift('Nour');
+console.log(allNames);
+allNames.unshift('Fatima');
+console.log(allNames);
+
+// shift remove the 1st item of the array
+allNames.shift();
+console.log(allNames);
+allNames.shift();
+console.log(allNames);
+allNames.shift();
+console.log(allNames);
+
+// push add item at the end of the array
+allNames.push('Nour');
+console.log(allNames);
+allNames.push('Fatima');
+console.log(allNames);
+
+// pop remove the last item of the array
+allNames.pop();
+console.log(allNames);
+allNames.pop();
+console.log(allNames);
+allNames.pop();
+console.log(allNames);
+
+// splice - mutates origial array
+const specificNames = allNames.splice(1, 2);
+// splice(X,Y):we remove Y elemnt from the array starting the index X
+console.log(specificNames);
+console.log(allNames);
+
+<h2>array and for loop</h2>
+
+const newNames = ['Ali', 'Alaa', 'Fatima', 'Nour'];
+const lastName = "Study";
+let newArray = []
+
+for (let i = 0; i < newNames.length; i++) {
+const fName = `${newNames[i]} ${lastName}`
+newArray.push(fName)
+}
+
+console.log(newArray);
+
+<h2>functions, return, if, arrays, for loop</h2>
+
+const gas = [10, 30, 20, 15];
+const food = [40, 70, 10, 80];
+
+function calculateTotal(arr) {
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+sum += arr[i]
+}
+if (sum > 100) {
+console.log(`Woah!! You spend too much !!!`);
+return sum;
+}
+console.log(`You spend less than 100.`);
+return sum;
+}
+
+const gasTotal = calculateTotal(gas)
+const foodTotal = calculateTotal(food)
+const randomTotal = calculateTotal([50, 40, 70]);
+
+console.log({
+gas: gasTotal,
+food: foodTotal,
+random: randomTotal
+});
+
+<h2>reference vs value</h2>
+
+// primative type
+// string, number, symbol, boolean, undefiend, null
+// arrays, functions, objects - object
+// typeof
+
+// when assigning primitive data-type value to a variable, any changes are made directly to that value without affecting the original value
+
+// when assigning non-primitive data-type value to a variable, any changes are made directly to that value will affecting the original value since its done by reference
+
+let num1 = 1;
+let num2 = num1;
+num2 = 3;
+console.log(`num 1: ${num1}`)
+console.log(`num 2: ${num2}`)
+
+const person1 = { name: "Ali" }
+let person2 = person1;
+let person3 = { ...person1 }
+person2.name = "Alaa"
+console.log(`person 1 name: ${person1.name}`)
+console.log(`person 2 name: ${person2.name}`)
+console.log(`person 3 name: ${person3.name}`)
+
+<h2>Null and undefined</h2>
+
+// both present "no value"
+
+// undefined : javascript cannot find a value for it
+
+// variable without value
+// missing function arguments
+// missing object properties
+
+// null : developer sets the value
+let number1 = 10 + null;
+let number2 = 10 + undefined;
+console.log(number1); // 10
+console.log(number2); // NaN
+
+<h2>Truthy and Falsy</h2>
+
+// "", '', ``, -0, 0, NaN, null, undefined.
+
+let text1 = "Ali";
+let text2 = -0;
+if (text1) {
+    console.log(`Hey. Im truthy.`);
+}
+if (!text2) {
+    console.log(`Hey. Im falsy.`);
+}
+
+<h2>unary operator typeof</h2>
+// unary operator typeof
+let text = 'some text';
+// console.log(typeof text); //operand
+// binary operator - assignment
+let number = 3;
+let number2 = 3 + 5;
+// ternary operator
+// condition  ? (runs if true):(runs if false)
+
+const value = -1 > 0;
+value ? console.log(`TRUE`) : console.log(`FALSE`);
+
+
+
+<h2>Global scope vs Local scope</h2>
+
+// Global scope vs Local scope
+// any variable outside code block {} is said to be in global scope
+// can be access anywhere in the program
+// Gotchas: name collisions, modify by mistake
+
+let myName = 'Ali';
+
+function changeName() {
+    console.log(myName);
+    myName = 'Alaa'
+}
+
+changeName()
+if (true) {
+    console.log(myName);
+    myName = 'Loulou'
+}
+console.log(myName);
+
+
+<h2>callback function</h2>
+
+function morning(name) {
+    let newName = `${name} `;
+    return (`Good morning ${newName.repeat(3)}.`);
+}
+function evening(name) {
+    return (`Good evening ${name.toUpperCase()}.`);
+}
+
+function greet(name, cbfunction) {
+    const myName = "Ali"
+    console.log(`${cbfunction(name)}, my name is ${myName}.`);
+}
+
+greet('Alaa',morning);
+greet('Alaa',evening);
+
+
+</body>
