@@ -1,36 +1,23 @@
-// Global scope vs Local scope
-// any variable outside code block {} is said to be in global scope
-// can be access anywhere in the program
-// Gotchas: name collisions, modify by mistake
+// reduce
+// iterates, callback functions
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculation
+// 2 parameter ('curr') - current iteration/value
 
-let myName = 'Ali';
 
-function changeName() {
-    console.log(myName);
-    myName = 'Alaa'
-}
+const people = [
+    { name: 'Alaa', age: 32, position: 'Doctor', id: 1, salary: 2000 }
+    ,
+    { name: 'Ali', age: 30, position: 'Full Stack Developer', id: 1, salary: 2500 },
+    { name: 'Nour', age: 25, position: 'Front-End Developer', id: 2, salary: 1560 },
+    { name: 'Fatima', age: 23, position: 'Front-End Developer', id: 3, salary: 1560 }
+]
 
-changeName()
-if (true) {
-    console.log(myName);
-    myName = 'Loulou'
-}
-console.log(myName);
+const total = people.reduce(function (acc, curr) {
+    console.log(`total :${acc}`);
+    console.log(`current :${curr.salary}`);
+    acc += curr.salary;
+    return acc;
+}, 0)
 
-// callback function
-
-function morning(name) {
-    let newName = `${name} `;
-    return (`Good morning ${newName.repeat(3)}`);
-}
-function evening(name) {
-    return (`Good evening ${name.toUpperCase()}`);
-}
-
-function greet(name, cbfunction) {
-    const myName = "Ali"
-    console.log(`${cbfunction(name)}, my name is ${myName}.`);
-}
-
-greet('Alaa',morning);
-greet('Alaa',evening);
+console.log(total);

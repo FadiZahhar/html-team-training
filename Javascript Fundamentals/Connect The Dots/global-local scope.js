@@ -21,10 +21,10 @@ console.log(myName);
 
 function morning(name) {
     let newName = `${name} `;
-    return (`Good morning ${newName.repeat(3)}.`);
+    return (`Good morning ${newName.repeat(3)}`);
 }
 function evening(name) {
-    return (`Good evening ${name.toUpperCase()}.`);
+    return (`Good evening ${name.toUpperCase()}`);
 }
 
 function greet(name, cbfunction) {
@@ -32,5 +32,5 @@ function greet(name, cbfunction) {
     console.log(`${cbfunction(name)}, my name is ${myName}.`);
 }
 
-greet('Alaa',morning);
-greet('Alaa',evening);
+greet('Alaa', morning);
+greet('Alaa', evening);

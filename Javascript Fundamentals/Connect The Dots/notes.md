@@ -412,10 +412,10 @@ console.log(number2); // NaN
 let text1 = "Ali";
 let text2 = -0;
 if (text1) {
-    console.log(`Hey. Im truthy.`);
+console.log(`Hey. Im truthy.`);
 }
 if (!text2) {
-    console.log(`Hey. Im falsy.`);
+console.log(`Hey. Im falsy.`);
 }
 
 <h2>unary operator typeof</h2>
@@ -431,8 +431,6 @@ let number2 = 3 + 5;
 const value = -1 > 0;
 value ? console.log(`TRUE`) : console.log(`FALSE`);
 
-
-
 <h2>Global scope vs Local scope</h2>
 
 // Global scope vs Local scope
@@ -443,35 +441,165 @@ value ? console.log(`TRUE`) : console.log(`FALSE`);
 let myName = 'Ali';
 
 function changeName() {
-    console.log(myName);
-    myName = 'Alaa'
+console.log(myName);
+myName = 'Alaa'
 }
 
 changeName()
 if (true) {
-    console.log(myName);
-    myName = 'Loulou'
+console.log(myName);
+myName = 'Loulou'
 }
 console.log(myName);
-
 
 <h2>callback function</h2>
 
 function morning(name) {
-    let newName = `${name} `;
-    return (`Good morning ${newName.repeat(3)}.`);
+let newName = `${name} `;
+return (`Good morning ${newName.repeat(3)}.`);
 }
 function evening(name) {
-    return (`Good evening ${name.toUpperCase()}.`);
+return (`Good evening ${name.toUpperCase()}.`);
 }
 
 function greet(name, cbfunction) {
-    const myName = "Ali"
-    console.log(`${cbfunction(name)}, my name is ${myName}.`);
+const myName = "Ali"
+console.log(`${cbfunction(name)}, my name is ${myName}.`);
 }
 
 greet('Alaa',morning);
 greet('Alaa',evening);
 
+<h1>Powerfull array methods</h1>
 
+// forEach, map, filter, find, reduce
+// Iterate over array, no for loop required
+// Accept callback function as an argument, calls Callback against each
+// item in an array. Reference item in the Callback parameter.
+
+<h2>forEach</h2>
+// forEach
+// does not return new array
+
+const people = [
+{ name: 'Alaa', age: 32, position: 'Doctor' },
+{ name: 'Ali', age: 30, position: 'Full Stack Developer' },
+{ name: 'Nour', age: 25, position: 'Front-End Developer' },
+{ name: 'Fatima', age: 23, position: 'Front-End Developer' }
+]
+
+function showPerson(person) {
+console.log(person);
+}
+
+people.forEach(showPerson)
+
+people.forEach(function (item) {
+console.log(item.age.toString());
+})
+
+<h2>map</h2>
+
+// map
+// does return new array
+// does not change size of original array
+// uses values from original array when making new one
+
+const people = [
+{ name: 'Alaa', age: 32, position: 'Doctor' },
+{ name: 'Ali', age: 30, position: 'Full Stack Developer' },
+{ name: 'Nour', age: 25, position: 'Front-End Developer' },
+{ name: 'Fatima', age: 23, position: 'Front-End Developer' }
+]
+
+const ages = people.map(function (person) {
+return person.age
+})
+
+const newPeople = people.map(function (person) {
+return { ...person, married: true }
+})
+
+const names = people.map(function (person) {
+return `<h1 style="color:red">${person.name}</h1>`
+})
+
+console.log(ages)
+
+console.log(newPeople)
+
+document.body.innerHTML = names.join('')
+
+<h2>filter</h2>
+
+// filter
+// does return new array
+// can manipulate the size of new array
+// returns based on consition
+
+const people = [
+{ name: 'Alaa', age: 32, position: 'Doctor' },
+{ name: 'Ali', age: 30, position: 'Full Stack Developer' },
+{ name: 'Nour', age: 25, position: 'Front-End Developer' },
+{ name: 'Fatima', age: 23, position: 'Front-End Developer' }
+]
+
+const youngPeople = people.filter(function (person) {
+return person.age <= 25 && person.name.includes("our")
+})
+
+console.log(youngPeople);
+
+<h2>find</h2>
+// find
+// return single instance - (in this case object)
+// return first match, if no match it returns indefined
+// great for getting unique value
+
+const names = ['Ali', 'Alaa', 'Nour', 'Fatima']
+
+console.log(names.find(function (name) {
+return name === 'Alaa' || name === 'Ali'
+}));
+
+const people = [
+{ name: 'Alaa', age: 32, position: 'Doctor', id: 1 },
+{ name: 'Ali', age: 30, position: 'Full Stack Developer', id: 1 },
+{ name: 'Nour', age: 25, position: 'Front-End Developer', id: 2 },
+{ name: 'Fatima', age: 23, position: 'Front-End Developer', id: 3 }
+]
+
+const person = people.find(function (person) {
+return person.id === 1
+})
+console.log(person);
+
+<h2>reduce</h2>
+
+// reduce
+// iterates, callback functions
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculation
+// 2 parameter ('curr') - current iteration/value
+
+const people = [
+{ name: 'Alaa', age: 32, position: 'Doctor', id: 1, salary: 2000 }
+,
+{ name: 'Ali', age: 30, position: 'Full Stack Developer', id: 1, salary: 2500 },
+{ name: 'Nour', age: 25, position: 'Front-End Developer', id: 2, salary: 1560 },
+{ name: 'Fatima', age: 23, position: 'Front-End Developer', id: 3, salary: 1560 }
+]
+
+const total = people.reduce(function (acc, curr) {
+console.log(`total :${acc}`);
+console.log(`current :${curr.salary}`);
+acc += curr.salary;
+return acc;
+}, 0)
+
+console.log(total);
+
+
+
+<h1>Math</h1>
 </body>
