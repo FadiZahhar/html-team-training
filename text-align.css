@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    display: flex;
+    height: 100vh; /* Relative to 1% of the height of the the browser window siz*/
+    align-items: center; /*vertically aligned in the mid of the page */
+    color: #2e3139;
+}
+
+.container > div{ /*The child selector (>) selects all elements that are the children of a specified element.*/
+    width: 50%;
+    padding: 3rem; /*Relative to font-size of the root element*/
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+form label{
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+form input{
+    width: 100%;
+    border: none;
+    background-color: rgba(46, 49, 57, 0.1);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-weight: 300;
+    outline: none;
+
+}
+
+
+h1{
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 4rem;
+}
+
+
+
+.rtl{
+    direction: rtl;
+    font-family: sans-serif;
+
+}
+
+.ltr input{
+    
+    font-family: sans-serif;
+}
+
+
+/*
+instead of these two tags we can put 1 logical property
+.helper{
+    font-size: 75%;
+    text-align: right;
+}
+
+.rtl .helper{
+    font-size: 75%;
+    text-align: left;
+}
+*/
+
+.helper{
+   font-size:75% ; 
+   text-align: end;
+}
