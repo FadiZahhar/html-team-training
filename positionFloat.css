@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+/*________________________________________position___________________________________________*/
+
+.container{
+    display: flex;
+    height: 100vh; 
+    align-items: center;
+    background-color: #afbada;
+    color: #020a24;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+}
+
+h2{
+    padding-block-end: 20px;
+}
+.container > div{
+
+    padding: 3em;
+    width: 50%;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.rtl{
+    direction: rtl;
+}
+
+.nav{
+    display: flex;
+    border-radius: 4px;
+    background-color: rgb(26, 26, 27);
+    color: blanchedalmond;
+    padding: 1rem 2rem;
+    position:relative;
+}
+
+.nav i{
+    position: absolute;
+    /* right: 2rem;
+    top: 1.2rem; */
+    inset-inline-end: 2rem;
+    inset-block-start: 1.2rem;
+}
+
+/*________________________________________float___________________________________________*/
+
+
+.card{
+    background-color: aliceblue;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    padding-block-start: 3rem;
+    padding-block-end: 4rem;
+    border-radius: 4px;
+}
+
+.card img{
+    /* float: left; */
+    /* margin-right: 3rem; */
+    float: inline-start; /* supported by firebox only*/
+    margin-inline-end: 3rem;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    shape-outside: circle(50%);
+}
