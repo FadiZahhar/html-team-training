@@ -1,0 +1,107 @@
+.demo{
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: darkgreen;
+}
+
+aside.demo {
+background-color: aqua;
+}
+header.demo {
+    background-color: brown;
+}
+footer.demo {
+    background-color: darkgoldenrod;
+}
+
+
+/*_______________________grid system______________________________*/
+
+.grid-container{
+    padding: 2rem;
+}
+
+.grid-x{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap:1em;
+}
+
+/*_______________________css grid ______________________________*/
+
+.wrapper{
+    padding: 1%;
+    margin: 3%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-column-gap: 1%;
+    grid-row-gap: 2% ;
+}
+.wrapper > div{
+    padding: 2%;
+    background-color: rgb(245, 159, 128);
+    border-radius: 4px;
+}
+
+.wrapper > div:nth-child(odd){
+    background-color: rgb(248, 175, 58);
+
+}
+
+/*_______________________ nested css grid ______________________________*/
+.wrapper2{
+    display: grid;
+    margin: 20px;
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(100px,auto);
+}
+.wrapper2 > div{
+    padding: 2%;
+    background-color: rgb(245, 159, 128);
+}
+
+.wrapper2 > div:nth-child(odd){
+    background-color: rgb(248, 175, 58);
+
+}
+
+.nested{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.nested >div:nth-child(odd){
+    background-color: mediumpurple;
+}
+/*_______________________ stretching cell in grid______________________________*/
+
+.wrapper3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2px;
+}
+
+.wrapper3 >div{
+    background-color: rgb(143, 143, 207);
+}
+
+.wrapper3 > div:nth-child(odd){
+    background-color: rgb(213, 207, 226);
+}
+.box1{
+grid-row: 1/2;
+grid-column: 2/4;
+border: rgb(173, 7, 7) 2px solid;
+}
+.box2{
+    grid-row:2/3;
+    grid-column: 1/4;
+    border: rgb(30, 21, 114) 2px solid;
+}
+
+.box3{
+    grid-row: 1/4;
+    grid-column:2 ;
+    border: rgb(114, 21, 86) 2px solid;
+    
+}
