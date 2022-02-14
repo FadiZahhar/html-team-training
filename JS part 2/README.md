@@ -47,18 +47,3 @@ Note: JavaScript counts months from 0 to 11:
 January = 0.
 
 December = 11.
-
-4- querySelector - querySelectorAll
-
-- The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.
-  `var el = document.querySelector(".myclass");`
-
-- The Document method querySelectorAll() returns a static NodeList representing a list of the document's elements that match the specified group of selectors.
-  `const matches = document.querySelectorAll("p");`
-
-5- ChildNodes
-
-The read-only childNodes property of the Node interface returns a live NodeList of child nodes of the given element where the first child node is assigned index 0. Child nodes include elements, text and comments.
-Returns all childNodes including whitespace which is treated as a text node
-
-It is important to keep in mind that childNodes includes all child nodes, including non-element nodes like text and comment. To get a collection containing only elements, use **Element.children** instead.
