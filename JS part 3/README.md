@@ -26,7 +26,8 @@
      The read-only parentElement property of Node interface returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element.
 
 5- Next sibling
-Return the HTML content of the next sibling of a list item:
+
+      Return the HTML content of the next sibling of a list item:
 
      `document.getElementById("item1").nextSibling.innerHTML;`
 
