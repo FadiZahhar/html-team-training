@@ -554,3 +554,168 @@ mult();
 return res2
 }
 console.log(add1(3,4))
+
+//callback function ,Higher Order  functions, functions as first class objects/citizens
+// functions are first class - stored in a variables(expression) ,passed an argument to another function,return from th function
+// Higher Order  functions - accepts another function as an argument or returns another functionas a result
+
+//callback
+
+function morning(name){
+ return `Good morning ${name.toLowerCase() }`
+
+}
+//callback
+function afternoon(name){
+ return `Good afternoon ${name.repeat(3) }`
+
+}
+//Higher functions
+function greet(name,cb){
+ const MyName='john';
+ console.log(`${cb(name)},my name is ${MyName}`)
+}
+greet('bob',morning)
+greet('peter',afternoon)
+
+// Array methods
+
+const PERSON=[
+ {name:'john',age:30,position:'designer',id:1},
+ {name:'peter',age:20,position:'developer',id:2},
+ {name:'bob',age:28,position:'boss',id:3},
+]
+
+//1- forEach()	:Calls a function for each array element
+
+function show(person){
+console.log(person.position)
+}
+ PERSON.forEach(show)
+ // or 
+ PERSON.forEach(function (item){
+  console.log(item.position)
+ })
+
+// 2-map :	Creates a new array with the result of calling a function for each array element
+// dosen't change size of original array
+// use values from original array when making new one 
+const Age= PERSON.map( function(person){
+ return `<h3>${person.age}</h3>`;
+});
+const Age1= PERSON.map( function(person){
+ return {
+  firstname:person.name,
+  oldage:person.age+30,
+ };
+});
+console.log(Age);//[30, 20, 28]
+console.log(Age1);
+/*
+0: {firstname: 'john', oldage: 30}
+1: {firstname: 'peter', oldage: 20}
+2: {firstname: 'bob', oldage: 28}
+*/
+document.body.innerHTML=Age.join('')
+
+// 3- filter : can manipulate the size of new array ,returns based on condition 
+const youngPerson=PERSON.filter(function(person){
+ return person.age<28;
+
+}
+)
+console.log(youngPerson)//{name: 'peter', age: 20, position: 'developer'}
+
+//4- find():	Returns the first match ,if no match undefined ,great for getting unique value , return single instance
+
+
+const FIND=PERSON.find(function(person){
+return person.id==1;
+});
+console.log(FIND)//{name: 'john', age: 30, position: 'designer', id: 1}
+console.log(FIND.name)//john
+
+const FIND_Filter=PERSON.filter(function(person){
+ return person.id==1;
+ });
+ console.log(FIND_Filter)//return array
+ console.log(FIND_Filter[0].name)//john
+
+
+//5-reduce():iterates,callback function
+// reduces to a single value-number ,array,object
+// 1 param ('acc') -total of all calculatios
+// 2 param ('curr')- current iteration/value
+const peopLe=[
+ {name:'john',age:30,position:'designer',id:1,salary:10},
+ {name:'peter',age:20,position:'developer',id:2,salary:20},
+ {name:'bob',age:28,position:'boss',id:3,salary:30},
+
+]
+const Total=peopLe.reduce(function(acc,curr){
+ console.log(`total : ${acc}`)
+ console.log(`current money : ${curr.salary}`)
+ acc+=curr.salary;
+ return acc;
+},0);
+console.log(Total)
+
+
+
+// Math
+
+//1-floor : function returns the largest integer less than or equal to a given number.
+const NUnmber=Math.floor(5.88)
+console.log(NUnmber)//5
+
+//2-ceil:unction always rounds a number up to the next largest integer.
+console.log(Math.ceil(6.1))//7
+
+//3-sqrt
+console.log(Math.sqrt(9))//3
+
+//4-min
+console.log(Math.min(1,3,4,5))//1
+
+//5-max
+console.log(Math.max(1,3,4,5))//5
+
+//6-random
+console.log(Math.random())//0.9804444501396363
+
+
+// Date
+
+var months = [
+ "January", 
+"February", 
+"March", 
+"April",
+ "May", 
+ "June",
+ "July", 
+ "August", 
+ "September",
+  "October", 
+  "November", 
+  "December"];
+  const days=[
+   'Sunday',
+   'Monady',
+   'tuesday',
+   'wednesday',
+   'thursday',
+   'Friday',
+   'saturtday'
+  ]
+
+const date =new Date();
+console.log(date)//Fri Feb 11 2022 15:29:58 GMT+0200 (Eastern European Standard Time)
+console.log(months[date.getMonth()])//February
+
+console.log(days[date.getDay()])//Friday
+
+console.log(date.getFullYear())//2022
+ const sentence=`${days[date.getDay()]},${date.getDay()},${months[date.getMonth()]},${date.getFullYear()}`;
+ document.body.innerHTML=sentence;//Friday,5,February,2022
+
