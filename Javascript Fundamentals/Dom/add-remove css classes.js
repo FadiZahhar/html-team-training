@@ -26,3 +26,18 @@ let result = first.classList.contains('color');
 console.log(result);
 result = second.classList.contains('size');
 console.log(result);
+
+
+
+// CSS
+
+const random = document.querySelector('.random');
+
+random.style.backgroundColor = 'red';
+random.style.color = 'white';
+random.style.fontSize = '3rem';
+random.style.textTransform = 'uppercase';
+
+// or create class in CSS and add this class to our element
+// random.classList.add('title')
+
