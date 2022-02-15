@@ -1,70 +1,204 @@
-# Getting Started with Create React App
+# React Js crash documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <mark>- JSX rules</mark>
 
-## Available Scripts
+### 1. `Return single element`
 
-In the project directory, you can run:
+```javascript
+function Greating() {
+  return <div> ... </div>
+}
+```
 
-### `npm start`
+### 2. `div/ section / article or Fragment`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```javascript
+<div>...</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<section>...</section>
 
-### `npm test`
+<article>...</article>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<React.Fragment>...</React.Fragment>
+```
 
-### `npm run build`
+### 3. `Use camelCase for html attribute`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+className instead of class
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+onClick instead of onclick
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+etc ...
+```
 
-### `npm run eject`
+### 4. `Close every element`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+<img src="" alt="" />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div>...</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<button></button>
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. `Formatting`
 
-## Learn More
+```javascript
+function Greating() {
+  return (
+    <React.Fragment>
+      <h1>Hello World</h1>
+    </React.Fragment>
+  )
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## <mark>- Nested Component, React tools</mark>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+import React from "react"
+import ReactDom from "react-dom"
 
-### Code Splitting
+function BookList() {
+  return (
+    <React.Fragment>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </React.Fragment>
+  )
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+function Book() {
+  return (
+    <div>
+      <Image />
+      <Title />
+      <Author />
+    </div>
+  )
+}
 
-### Analyzing the Bundle Size
+const Image = () => (
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmIZsBWiKrffTcn49P_KYZlo1sjMCb-DX6g&usqp=CAU"
+    alt="Lose belly fat"
+  />
+)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const Title = () => {
+  return <h3>How to lose your belly fat</h3>
+}
 
-### Making a Progressive Web App
+const Author = () => {
+  return <p>Ali Eh Helbawi</p>
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ReactDom.render(<BookList />, document.getElementById("root"))
+```
 
-### Advanced Configuration
+## <mark>- CSS </mark>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 1- index.css
 
-### Deployment
+```javascript
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f1f5f8;
+  color: #222;
+}
 
-### `npm run build` fails to minify
+.bookList {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+@media screen and (min-width: 768px) {
+  .bookList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.book h3 {
+  margin-top: 0.5rem;
+}
+
+.book p {
+  color: #617d98;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+
+```
+
+### 2- index.js
+
+```javascript
+import React from "react"
+import ReactDom from "react-dom"
+
+// CSS
+import "./index.css"
+
+// setup variables
+const title = "How to lose your belly fat"
+const author = "Ali Eh Helbawi"
+const img = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmIZsBWiKrffTcn49P_KYZlo1sjMCb-DX6g&usqp=CAU`
+
+function BookList() {
+  return (
+    <section className="bookList">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
+
+function Book() {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+}
+
+const Image = () => <img src={img} alt="Lose belly fat" />
+
+const Title = () => {
+  return <h3 style={{ color: "red", backgroundColor: "blue" }}>{title}</h3>
+}
+
+const Author = () => {
+  return <p style={{ fontSize: "0.75rem", letterSpacing: "3px" }}>{author}</p>
+}
+
+ReactDom.render(<BookList />, document.getElementById("root"))
+```
+
+## <mark>- Props </mark>
