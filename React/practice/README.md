@@ -1,14 +1,3 @@
-<head>
-<style>
-.highlighted{
-background-color:red;
-font-size:2rem;
-color:white;
-
-}
-</style>
-
-</head>
 
 # React Js crash documentation
 
