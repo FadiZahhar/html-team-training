@@ -1,3 +1,15 @@
+<head>
+<style>
+.highlighted{
+background-color:red;
+font-size:2rem;
+color:white;
+
+}
+</style>
+
+</head>
+
 # React Js crash documentation
 
 ## <mark>- JSX rules</mark>
@@ -202,3 +214,41 @@ ReactDom.render(<BookList />, document.getElementById("root"))
 ```
 
 ## <mark>- Props </mark>
+
+```javascript
+function BookList() {
+  return (
+    <section className="bookList">
+      <Book
+        title={firstBook.title}
+        author={firstBook.author}
+        img={firstBook.img}
+      >
+        {/* children props mustbe in between the tags */}
+        <a href="#">Pro-Solution.net</a>
+      </Book>
+
+      <Book
+        title={secondBook.title}
+        author={secondBook.author}
+        img={secondBook.img}
+      />
+    </section>
+  )
+}
+
+function Book(props) {
+  // or function Book({ img, title, author, children }) {
+  const { img, title, author } = props
+
+  return (
+    <article className="book">
+      <Image img={img} />
+      <Title title={title} />
+      <Author author={author} />
+      {props.children}
+    </article>
+  )
+}
+
+```

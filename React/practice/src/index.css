@@ -41,3 +41,8 @@ body {
   margin-top: 0.25rem;
 }
 
+.book a {
+  color: #58e447;
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+}
