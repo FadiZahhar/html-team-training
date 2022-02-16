@@ -115,10 +115,11 @@ function stopPropagation(event){
 console.log('you clicked on a list item ')
 event.stopPropagation()
 }
-list.addEventListener('click',showBubbiling);
-container.addEventListener('click',showBubbiling)
-document.addEventListener('click',showBubbiling)
-window.addEventListener('click',showBubbiling)
+// list.addEventListener('click',stopPropagation);
+list.addEventListener('click',showBubbiling,{capture:true});
+container.addEventListener('click',showBubbiling,{capture:true})//
+document.addEventListener('click',showBubbiling,{capture:true})
+window.addEventListener('click',showBubbiling,{capture:true})
 
 
 BTN.addEventListener('click',function(){

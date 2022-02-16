@@ -1,18 +1,3 @@
-// selecting all of them 
-document.querySelectorAll('.btn').forEach(item =>{
- item.addEventListener('click',()=>{
-  alert('this is good')
- })
- 
-  }
-  )
-  // hello world display on the browser
-  document.write('hello world');
-  document.write({name:'Fatima'});
-  // when the page load we have the pop up box and the text is "hi"
-  // alert('hi');
-  console.log({name:'Fatima'});
-
 
 
   ///////////////////////////////////////////////////////////////////////////
@@ -44,16 +29,13 @@ console.log(firstname);
 
 //////////////////////////////////////////////////////////////////////
 // can contain digits ,letters,underscore,$
-// must start  with letter,$or _
+// must start  with letter,$or _\
+//can't start with a nmbr
 let random123_$="random";
 let $random123_$="random";
 console.log(random123_$);
 console.log($random123_$);
 /* no keyword like let let="";its not gonna work
-can t start with a nmbr
-
-case sensitive -fullname vs Fullname this 2 are not the same
-
 Let vs const vs var
  using var  var replaced by let by the time but they are the same*/
 var value="var";
@@ -84,12 +66,14 @@ const first="John";
 const lastName="wick";
 console.log("Hello my name is :"+ first+" "+lastName);
 // or
+
 let fullname=first+" "+lastName;
 console.log("Hello my name is :"+ fullname);
 
 const website="youtube";
 const url="https://www."+website+".com";
 console.log(url);
+const url=`https://www."${website}+".com`;
 
 
 
@@ -215,6 +199,7 @@ function myFunction(a, b) {
 }
 const x=myFunction(3,3);
 const y=myFunction(3,2);
+// store the result in array
 const dimensions=[x,y];
 console.log(dimensions)
 
@@ -224,8 +209,8 @@ const add=function(a,b){
 return a+b;
 }
 const result=add(5,5);
-// i can store the result in array
 
+// store the result in array
 const dimensions1=[x,y,add(5,5)];
 console.log(dimensions1);//[9,6,10]
 
@@ -397,8 +382,8 @@ console.log(text.slice(-2))//ck
 // Template Literals -ES6 +
 //backtick char.. ``
 //  insert expression value
-const name="John"
-const val=`Hey it's ${name}....${4+4}`
+const name4="John"
+const val=`Hey it's ${name4}....${4+4}`
 
 
 // Array properties and methods
@@ -415,7 +400,7 @@ const all=names.concat(age);["john", "bob", "ben","23", "23", "23"];
 //3-reverse()	Reverses the order of the elements in an array
 console.log(names.reverse())//["ben","bob","john"]
 
-//4-unshift()	Adds new elements to the beginning of an array, and returns the new length
+//4-unshift()	Adds new elements to the beginning of an array
 console.log(names.unshift('susy'))//["susy","ben","bob","john"] 
 
 //5-shift()	remove elements from  the beginning of an array
@@ -438,6 +423,7 @@ const Lastname='bos'
 let newArray=[]
 
 //for loop
+
 for(let i=0;i<namess.length;i++)
 {
   console.log(namess[i]);
@@ -446,8 +432,10 @@ for(let i=0;i<namess.length;i++)
 }
 
 // functions,return,if,arrays, for loop
+
 const gaz =[20,40,100,30]
 const food=[10,40,50]
+
 function calculater(arr){
   let total=0
   for(let i=0;i<arr.length;i++)
