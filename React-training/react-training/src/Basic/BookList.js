@@ -57,7 +57,7 @@ const complex=(title)=>{
 alert(title)
 }
   return (
-  <article className='book' onMouseOver={()=>complex(props.title)}> 
+  <article className='book' > 
   <Image/>
   <h1>title:{props.title}</h1><h4 >2000</h4>
   <p>{ props.job}</p>
