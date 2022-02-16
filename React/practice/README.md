@@ -264,7 +264,7 @@ const books = [
     id: 3,
     title: "How to lose your money",
     author: "Ali Eh Helbawi",
-    img: `https://m.media-amazon.com/images/I/517YcbrSmvS.jpg`
+    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP7rjjvMPoPWHbcc_6C5AFTk5Ly28SDo_fuw&usqp=CAU`
   }
 ]
 
@@ -332,4 +332,65 @@ function Book(props) {
   )
 }
 
+```
+
+## <mark>- Event Basics</mark>
+
+```javascript
+function Book(props) {
+  const { img, title, author } = props
+
+  // attribute, eventHandler
+  // we can write the function or we can pass it as a referrence
+  const onClickHandler = (e) => {
+    console.log(e.target)
+  }
+  const complexExample = (author) => {
+    console.log(author)
+  }
+
+  const mouseOver = (title) => {
+    console.log(title)
+  }
+
+  return (
+    <article
+      className="book"
+      onMouseOver={() => {
+        mouseOver(title)
+      }}
+    >
+      <Image img={img} />
+      <Title title={title} />
+      <Author author={author} />
+
+      <button
+        type="button"
+        onClick={() => {
+          console.log(title)
+        }}
+      >
+        simple example
+      </button>
+
+      <button
+        type="button"
+        onClick={(e) => {
+          onClickHandler(e)
+        }}
+      >
+        reference example
+      </button>
+
+      <button
+        type="button"
+        onClick={() => {
+          complexExample(author)
+        }}
+      >
+        complex example
+      </button>
+    </article>
+  )
+}
 ```

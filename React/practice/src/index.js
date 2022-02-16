@@ -27,7 +27,7 @@ const books = [
     id: 3,
     title: "How to lose your money",
     author: "Ali Eh Helbawi",
-    img: `https://m.media-amazon.com/images/I/517YcbrSmvS.jpg`
+    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP7rjjvMPoPWHbcc_6C5AFTk5Ly28SDo_fuw&usqp=CAU`
   }
 ]
 
@@ -36,35 +36,7 @@ function BookList() {
   return (
     <section className='bookList'>
       {books.map((book) => {
-        {/* const { title, author, img, id } = book
-         return (
-          <Book key={id}
-            title={title}
-            author={author}
-            img={img} />)
-      })} */}
-        /////////////////////////////////////////////
-        // or 
-        {/* return (
-          <Book key={book.id}
-            book={book} />)
-      ***************************
-      // in this case we shoud change the book fubction as below:
-      /// we use book.img and so on since now the props is an entry object not destructed yet
-      ***************************
-      function Book(props) {
-      const { img, title, author } = props
-      return (
-      <article className='book'>
-      <Image img={book.img} />
-      <Title title={book.title} />
-      <Author author={book.author} />
-      </article>
-  )
-}
-      })} */}
-        ////////////////////////////////////////////
-        // or
+
         return (
           <Book key={book.id}
             {...book} />)
@@ -75,15 +47,32 @@ function BookList() {
 }
 
 function Book(props) {
+
   // or function Book({ img, title, author, children }) {
   const { img, title, author } = props
 
+  // attribute, eventHandler
+
+  const onClickHandler = (e) => {
+    console.log(e.target)
+  }
+  const complexExample = (author) => {
+    console.log(author);
+  }
+
+  const mouseOver = (title) => {
+    console.log(title);
+  }
+
+
   return (
-    <article className='book'>
+    <article className='book' onMouseOver={() => { mouseOver(title) }}>
       <Image img={img} />
       <Title title={title} />
       <Author author={author} />
-      {props.children}
+      <button type='button' onClick={(e) => { onClickHandler(e) }}>reference example</button>
+      <button type='button' onClick={() => { complexExample(author) }}>complex example</button>
+      {/* {props.children} */}
     </article>
   )
 }
