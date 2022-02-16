@@ -14,3 +14,20 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+p {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.book {
+  background-color: aliceblue;
+  border-radius: 20px;
+  width: 20rem;
+  text-align: center;
+  padding-top: 20px;
+}
