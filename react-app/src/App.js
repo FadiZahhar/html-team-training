@@ -1,4 +1,5 @@
 import React from "react";
+import {Book} from './books';
 // CSS
 import './index.css';
 
@@ -47,17 +48,6 @@ return <Book img = {book.img} title={book.title} author={book.author} key = {boo
     )
 };
 
-
-function Book(props) {
-    const {img, title, author} = props;
-  return (
-    <article className="book">
-        <img src = {img} alt='book img'/>
-        <h4>{title}</h4>
-        <p>{author}</p>
-      </article>
-  )
-}
 
 
 export default App;
