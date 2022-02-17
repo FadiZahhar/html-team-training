@@ -1,8 +1,10 @@
 # Advanced React
 
+<img src = './1174949_js_react js_logo_react_react native_icon-2.png'>
+
 ## Main Topic
 
-## React State
+## Hooks
 
 ### what is a react hook?
 
@@ -35,13 +37,14 @@
 
        As we learned earlier, effects run for every render and not just once. This is why React also cleans up effects from the previous render before running the effects next time.
 
-`function Example() {`
-`const [count, setCount] = useState(0);`
-
-`useEffect(() => {`
-`document.title =` `You clicked ${count} times;`
-`});`
-`}`
+```javascript
+function Example() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times;`;
+  });
+}
+```
 
 ### Usefull links:
 

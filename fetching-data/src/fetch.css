@@ -1,0 +1,22 @@
+ul {
+}
+
+ul img {
+  width: 5rem;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 1rem;
+}
+ul li {
+  list-style: none;
+  border: solid 5px grey;
+  background-color: azure;
+  width: 20rem;
+
+  margin: 2rem;
+  border-radius: 10px;
+  display: inline-grid;
+}
+body {
+  background-color: blanchedalmond;
+}
