@@ -774,3 +774,64 @@ function Timer() {
   return <h1>I've rendered {count} times!</h1>;
 }
 ```
+
+## <mark>- Multiple Returns - Fetching Data </mark>
+
+```javascript
+import React, { useState, useEffect } from "react"
+import Axios from "axios"
+
+const url = "https://api.github.com/users/QuincyLarson"
+
+const MultipleReturns = () => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
+  const [user, setUser] = useState("default users")
+
+  const fetchUser = async () => {
+    try {
+      let res = await Axios({
+        method: "get",
+        url: url,
+      })
+      let data = await res.data
+      setIsLoading(false)
+      setUser(data)
+    } catch (error) {
+      console.log(error.response)
+      // this is the main part. Use the response property from the error object
+      setIsLoading(false)
+      setIsError(true)
+      return error.response
+    }
+  }
+
+  useEffect(() => {
+    fetchUser()
+  }, [isLoading, isError, user])
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Loading...</h1>;
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <div>
+        <h1>Error...</h1>;
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <h1>{user.login}</h1>;
+    </div>
+  )
+}
+
+export default MultipleReturns
+```
