@@ -1,5 +1,5 @@
-import React from "react";
-import {Book} from './books';
+import React, {useState} from "react";
+import Book from './books';
 // CSS
 import './index.css';
 
@@ -38,14 +38,31 @@ id : 3,
 // nested components
 // working with props
 function App () {
+
+    const [text, setText] = useState('');
+    const [isError, setIsError] = useState(false);
+
+
     return (
     <section className="booklist">
+
+
 
  {books.map((book)=>{
 return <Book img = {book.img} title={book.title} author={book.author} key = {book.id}>{book}</Book>;
  })}
+
+
+{/* short circuit evaluation */}
+{/* ternary operators */}
+<h1>{text || 'john doe'}</h1>
+{isError && <h2>Error...</h2>}
+<button onClick={() =>{setIsError(!isError)}}style={{width:'5rem'}}>toggle error</button>
+
     </section>
     )
+
+
 };
 
 
