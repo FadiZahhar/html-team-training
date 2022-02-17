@@ -1,23 +1,67 @@
 import react from 'react'
 import ReactDOM from 'react-dom'
 
-//JSX Rules
-//return single element
-//wrap the retun statment with html sementics or a  react.fragment </>
-//use camelCase for html attribute
-//className instead of class
-//close every element
+// css  - we need to import full path cz it is not a dependancy
+//this css method is good for relatively small projects
+import './index.css'
+//Nested component , react tools
 
 function Greeting() {
-  //capitalize the names of the function so that react knows it is a component
-  return <h4> this is my first component</h4>
-  //this html is called jsx
+  return (
+    <div>
+      <Person />
+      <Message />
+    </div>
+  )
+}
+//implicit return example
+const Person = () => <h2> lora</h2>
+
+//implicit return example
+const Message = () => {
+  return <p>this is my message</p>
 }
 
-//this is what is happening under the hood but since it is much complicated and messy we use the above format
+//****************************************** */
 
-// const Greeting = () => {
-//   return react.createElement('h1', {}, 'hello there')
-// }
-ReactDOM.render(<Greeting />, document.getElementById('root'))
-//self closing tag is a must in react
+//creating an amazon like book store
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
+const Book = () => {
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Auther />
+    </article>
+  )
+}
+const Auther = () => {
+  return (
+    //inline styling
+    <h2 style={{ color: '#617d38', fontSize: '1.25rem', marginTop: '0.25rem' }}>
+      Zoi Tueker
+    </h2>
+  )
+}
+const Title = () => {
+  return <h1> The girl who said NO!</h1>
+}
+const Image = () => {
+  return (
+    <img
+      src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/561b1483830519.5d48f1ff93014.jpg'
+      alt='book cover'
+    />
+  )
+}
+
+ReactDOM.render(<BookList />, document.getElementById('root'))
