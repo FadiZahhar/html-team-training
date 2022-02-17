@@ -397,9 +397,10 @@ function Book(props) {
 
 ## <mark>- UseState</mark>
 
-### 1. `The React useState Hook allows us to track state in a function component`
+### 1. `Definition`
 
 ```javascript
+The React useState Hook allows us to track state in a function component
 State generally refers to data or properites that need to be tracking in an application.
 
 Import useState
@@ -563,4 +564,213 @@ Because we need the current value of state, we pass a function into our setCar f
 
 We then return an object, spreading the previousState and overwriting only the color.
 
+```
+
+### 6. `Counter example with setTimeout`
+
+```javascript
+const UseStateCounter = () => {
+  const [value, setValue] = useState(0)
+  const resetValue = () => {
+    setValue(0)
+  }
+  const complexIncrease = () => {
+    setTimeout(
+      () =>
+        setValue((prevValue) => {
+          return prevValue + 1
+        }),
+      2000
+    )
+  }
+
+  const complexDecrease = () => {
+    setTimeout(
+      () =>
+        setValue((prevValue) => {
+          return prevValue - 1
+        }),
+      2000
+    )
+  }
+  return (
+    <>
+      <section style={{ margin: "4rem 0" }}>
+        <h2>Complex counter</h2>
+        <h1>{value}</h1>
+        <button className="btn" onClick={complexIncrease}>
+          Increase
+        </button>
+        <button className="btn" onClick={resetValue}>
+          Reset
+        </button>
+        <button className="btn" onClick={complexDecrease}>
+          Decrease
+        </button>
+      </section>
+    </>
+  )
+}
+```
+
+## <mark>- UseEffect</mark>
+
+### 1. `Definition`
+
+```javascript
+
+The useEffect Hook allows you to perform side effects in your components.
+
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+useEffect accepts two arguments. The second argument is optional.
+
+useEffect(<function>, <dependency>)
+
+Let's use a timer as an example.
+
+Example:
+Use setTimeout() to count 1 second after initial render:
+
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+```
+
+### 2. `useEffect run `
+
+```javascript
+But wait!! I keeps counting even though it should only count once!
+
+useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect.
+
+This is not what we want. There are several ways to control when side effects run.
+
+We should always include the second parameter which accepts an array. We can optionally pass dependencies to useEffect in this array.
+
+1. No dependency passed:
+useEffect(() => {
+  //Runs on every render
+});
+2. An empty array:
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+3. Props or state values:
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes
+}, [prop, state]);
+So, to fix this issue, let s only run this effect on the initial render.
+
+Example:
+Only run the effect on the initial render:
+
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }, []); // <- add empty brackets here
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+```
+
+```javascript
+Example:
+Here is an example of a useEffect Hook that is dependent on a variable. If the users variable updates, the effect will run again:
+
+import React, { useState, useEffect } from 'react';
+
+const url = 'https://api.github.com/users';
+
+const UseEffectFetchData = () => {
+
+  const [users, setUsers] = useState([])
+
+  const fetchUser = async () => {
+    const response = await fetch(url);
+    const users = await response.json();
+    console.log(users);
+    setUsers(users)
+  }
+
+  useEffect(() => {
+    fetchUser();
+  }, [])
+
+  return <>
+
+    <h3>Github Users</h3>
+
+    <ul className='users'>
+
+      {users.map((user) => {
+        const { id, login, avatar_url, html_url } = user
+        return (
+          <li key={user.id}>
+            <img src={avatar_url} alt={login} />
+            <div>
+              <h4>{login}</h4>
+              <a href={html_url}>profile</a>
+            </div>
+          </li>
+        )
+      })}
+
+    </ul>
+  </>;
+};
+```
+
+```javascript
+If there are multiple dependencies, they should be included in the useEffect dependency array.
+```
+
+### 3. `Effect Cleanup`
+
+```javascript
+Some effects require cleanup to reduce memory leaks.
+
+Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.
+
+We do this by including a return function at the end of the useEffect Hook.
+
+Example:
+Clean up the timer at the end of the useEffect Hook:
+
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+    setCount((count) => count + 1);
+  }, 1000);
+
+  return () => clearTimeout(timer)
+  }, []);
+
+  return <h1>I've rendered {count} times!</h1>;
+}
 ```
