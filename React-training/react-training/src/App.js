@@ -6,6 +6,8 @@ import UseStateArray from './Advanced/UseState/UseStateArray';
 import UseStateObject from './Advanced/UseState/UseStateObject';
 import UseStateCounter from './Advanced/UseState/UseStateCounter';
 import Basics from './Advanced/UseEffect/Basics';
+import CleanUp from './Advanced/UseEffect/CleanUp';
+import FetchData from './Advanced/UseEffect/FetchData';
 function App() {
   return (
     <div className="App">
@@ -26,6 +28,12 @@ function App() {
        <br/><br/><br/><br/>
        <h1>UseEffectBaics</h1>
        <Basics/>
+       <br/><br/><br/><br/>
+       <h1>UseEffectCleanUp</h1>
+       <CleanUp/>
+       <br/><br/><br/><br/>
+       <h1>FetchData</h1>
+       <FetchData/>
     </div>
   );
 }
