@@ -8,6 +8,8 @@ import UseStateCounter from './Advanced/UseState/UseStateCounter';
 import Basics from './Advanced/UseEffect/Basics';
 import CleanUp from './Advanced/UseEffect/CleanUp';
 import FetchData from './Advanced/UseEffect/FetchData';
+import { MultipleReturn } from './Advanced/UseEffect/MultipleReturn';
+import ShortCircuit from './Advanced/UseEffect/ShortCircuit';
 function App() {
   return (
     <div className="App">
@@ -34,6 +36,14 @@ function App() {
        <br/><br/><br/><br/>
        <h1>FetchData</h1>
        <FetchData/>
+       <br/><br/><br/><br/>
+       <h1>MultipleReturn</h1>
+       <br/><br/>
+       <MultipleReturn/>
+       <br/><br/><br/><br/>
+       <h1>ShortCircuit</h1>
+       <ShortCircuit/>
+       <br/><br/>
     </div>
   );
 }
