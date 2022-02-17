@@ -564,3 +564,50 @@ Because we need the current value of state, we pass a function into our setCar f
 We then return an object, spreading the previousState and overwriting only the color.
 
 ```
+
+### 6. `Counter example with setTimeout`
+
+```javascript
+const UseStateCounter = () => {
+  const [value, setValue] = useState(0)
+  const resetValue = () => {
+    setValue(0)
+  }
+  const complexIncrease = () => {
+    setTimeout(
+      () =>
+        setValue((prevValue) => {
+          return prevValue + 1
+        }),
+      2000
+    )
+  }
+
+  const complexDecrease = () => {
+    setTimeout(
+      () =>
+        setValue((prevValue) => {
+          return prevValue - 1
+        }),
+      2000
+    )
+  }
+  return (
+    <>
+      <section style={{ margin: "4rem 0" }}>
+        <h2>Complex counter</h2>
+        <h1>{value}</h1>
+        <button className="btn" onClick={complexIncrease}>
+          Increase
+        </button>
+        <button className="btn" onClick={resetValue}>
+          Reset
+        </button>
+        <button className="btn" onClick={complexDecrease}>
+          Decrease
+        </button>
+      </section>
+    </>
+  )
+}
+```
