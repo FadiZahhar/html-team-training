@@ -17,10 +17,18 @@ body {
   padding: 1rem;
   margin: auto;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 20px;
 }
 
 .divv {
   text-align: center;
+}
+.sec {
+  border: 5px solid black;
+  width: 10rem;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
 }
