@@ -3,6 +3,7 @@ import Example from './Example';
 import './App.css';
 import {data} from './data';
 import References from './References';
+import Reducer from './Reducer';
 
 function App() {
 
@@ -71,6 +72,7 @@ useEffect( ()=>{
          {size}
        </div>
        <References />
+       <Reducer />
     </React.Fragment>
   );
 };
