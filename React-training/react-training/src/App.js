@@ -10,6 +10,7 @@ import CleanUp from './Advanced/UseEffect/CleanUp';
 import FetchData from './Advanced/UseEffect/FetchData';
 import { MultipleReturn } from './Advanced/UseEffect/MultipleReturn';
 import ShortCircuit from './Advanced/UseEffect/ShortCircuit';
+import ShowHide from './Advanced/UseEffect/ShowHide';
 function App() {
   return (
     <div className="App">
@@ -44,6 +45,7 @@ function App() {
        <h1>ShortCircuit</h1>
        <ShortCircuit/>
        <br/><br/>
+       <ShowHide/>
     </div>
   );
 }
