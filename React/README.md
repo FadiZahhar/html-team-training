@@ -835,3 +835,73 @@ const MultipleReturns = () => {
 
 export default MultipleReturns
 ```
+
+## <mark>- short-circuit evaluation</mark>
+
+```javascript
+ const [text, setText] = useState('')
+  const firstValue = text || 'hello world';
+  // || used to return default value if first value is falsy (null or false or undefined)
+  const secondValue = text && 'hello world';
+  // && used to return value if first value is truthy not (null or false or undefined)
+  // if its falsy it return empty
+
+  const [isError, setisError] = useState(false)
+
+  return <>
+    {text && <h1>{firstValue}</h1>}
+    {/* since text is empty so its falsy: so it will not appear */}
+    {!text && <h1>FSW</h1>}
+    {/* since text is empty so its truthy: so it will  appear */}
+    <h1>{text || "ALI"}</h1>
+    {/* since text is falsy so "Ali will appear" */}
+    <h1>{!text || "ALI"}</h1>
+    {/* since ! text is truthy so the text will appear */}
+    <button className='btn' onClick={() => setisError(!isError)} >Toggle Error</button>
+    {isError ? // if error is true first expression will be on if no the second will be on
+      <p>There is a gig error ...</p>
+      :
+      <div><h1>No Eroor ...</h1></div>}
+
+```
+
+## <mark>- Show/Hide Component</mark>
+
+```javascript
+import React, { useState, useEffect } from "react"
+
+const ShowHide = () => {
+  const [show, setShow] = useState(false)
+
+  return (
+    <>
+      <button className="btn" onClick={() => setShow(!show)}>
+        show/hide
+      </button>
+      {show && <Item />}
+    </>
+  )
+}
+
+const Item = () => {
+  const [size, setSize] = useState(window.innerWidth)
+  const checkSize = () => {
+    setSize(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener("resize", checkSize)
+    return () => {
+      window.removeEventListener("resize", checkSize)
+    }
+  }, [])
+  return (
+    <div style={{ marginTop: "2rem" }}>
+      <h1>Window</h1>
+      <h2>size: {size} px</h2>
+    </div>
+  )
+}
+
+export default ShowHide
+```
+
