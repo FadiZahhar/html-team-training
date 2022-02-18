@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom'
 import BookList from './BookList'
 import DataAsArrays from './DataAsArrays'
+import AddingEvents from './AddingEvents'
 
 function Home() {
   return (
@@ -10,6 +11,9 @@ function Home() {
       </div>
       <div>
         <DataAsArrays />
+      </div>
+      <div>
+        <AddingEvents />
       </div>
     </section>
   )
