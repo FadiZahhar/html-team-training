@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom'
 import BookList from './BookList'
 import DataAsArrays from './DataAsArrays'
-import AddingEvents from './AddingEvents'
-
+import Events from './AddingEvents'
+// since in AddingEvents the export was default we can call it whatever we want
 function Home() {
   return (
     <section>
@@ -13,7 +13,7 @@ function Home() {
         <DataAsArrays />
       </div>
       <div>
-        <AddingEvents />
+        <Events />
       </div>
     </section>
   )
