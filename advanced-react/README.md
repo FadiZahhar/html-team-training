@@ -46,6 +46,12 @@ function Example() {
 }
 ```
 
+## useRef
+
+- preserves value
+- Does Not trigger re-render
+- target DOM elements/node
+
 ### Usefull links:
 
       (React official site)[https://reactjs.org/docs/hooks-state.html]

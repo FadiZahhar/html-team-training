@@ -1,0 +1,13 @@
+.reference {
+  border: 5px solid black;
+  width: 10rem;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  height: 5rem;
+}
+.reference input,
+button {
+  margin-top: 1rem;
+}

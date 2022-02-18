@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Example from './Example';
 import './App.css';
 import {data} from './data';
+import References from './References';
 
 function App() {
 
@@ -69,6 +70,7 @@ useEffect( ()=>{
        <div className='sec'>
          {size}
        </div>
+       <References />
     </React.Fragment>
   );
 };
