@@ -12,6 +12,7 @@ import { MultipleReturn } from './Advanced/UseEffect/MultipleReturn';
 import ShortCircuit from './Advanced/UseEffect/ShortCircuit';
 import ShowHide from './Advanced/UseEffect/ShowHide';
 import ControlledInputs from './Advanced/Form/ControlledInputs ';
+import UseRefBasics from './Advanced/UseRef\'/UseRefBasics';
 function App() {
   return (
     <div className="App">
@@ -53,6 +54,9 @@ function App() {
        <br/><br/><br/><br/>
        <h1>ControlledInputs</h1>
        <ControlledInputs/>
+       <br/><br/><br/><br/>
+       <h1>UseRef</h1>
+       <UseRefBasics/>
     </div>
   );
 }
