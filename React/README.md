@@ -1122,3 +1122,199 @@ This time we use a combination of useState, useEffect, and useRef to keep track 
 
 In the useEffect, we are updating the useRef current value each time the inputValue is updated by entering text into the input field.
 ```
+
+## <mark>- React useReducer Hook</mark>
+
+<div>
+<h4>
+<ul>
+<li>
+<span style="color:white;background:black">
+The useReducer Hook is similar to the useState Hook.
+</span>
+</li>
+
+<li>
+<span style="color:white;background:black">
+It allows for custom state logic.
+</span>
+</li>
+
+<li>
+<span style="color:white;background:black">
+If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
+</span>
+</li>
+
+</ul>
+</h4>
+</div>
+
+```javascript
+The useReducer Hook accepts two arguments.
+
+useReducer(<reducer>, <initialState>)
+
+1- The reducer function contains your custom state logic and the initialStatecan be a simple value but generally will contain an object.
+
+2- The useReducer Hook returns the current stateand a dispatchmethod.
+
+```
+
+<div>
+<h3>
+<span style="color:red;background:black">
+- Here is an example of useReducer:
+</span>
+</h3>
+</div>
+
+<div>
+<h4>
+<span style="color:green;background:black">
+- index.js:
+</span>
+</h4>
+</div>
+
+```javascript
+import React, { useState, useReducer } from "react"
+import Modal from "./Modal"
+import { data } from "../../../data"
+// reducer function
+import { reducer } from "./reducer"
+
+const Index = () => {
+  const defaultState = {
+    people: [],
+    isModelOpen: false,
+    modelContent: "",
+  }
+  const [name, setName] = useState("")
+  const [state, dispatch] = useReducer(reducer, defaultState)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (name) {
+      const person = { id: new Date().getTime().toString(), name: name }
+      dispatch({ type: "ADD_ITEM", payload: person })
+      setName("")
+    } else {
+      dispatch({ type: "NO_VALUE", payload: "Please enter value" })
+    }
+  }
+
+  const closeModal = () => {
+    dispatch({ type: "CLOSE_MODAL" })
+  }
+
+  const handleRemove = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id })
+  }
+
+  return (
+    <>
+      {state.isModelOpen && (
+        <Modal modelContent={state.modelContent} closeModal={closeModal} />
+      )}
+      <form action="" onSubmit={handleSubmit} className="form">
+        <div>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <button type="submit">Add</button>
+      </form>
+      {state.people.map((person) => {
+        const { id, name } = person
+        return (
+          <div key={id} className="item">
+            <h4>{name}</h4>
+            <button className="btn" onClick={() => handleRemove(id)}>
+              Remove
+            </button>
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
+export default Index
+```
+
+<div>
+<h4>
+<span style="color:green;background:black">
+- Modal.js:
+</span>
+</h4>
+</div>
+
+```javascript
+import React, { useEffect } from "react"
+
+const Modal = ({ modelContent, closeModal }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      closeModal()
+    }, 3000)
+  })
+  return (
+    <div className="modal">
+      <p> {modelContent}</p>
+    </div>
+  )
+}
+
+export default Modal
+```
+
+<div>
+<h4>
+<span style="color:green;background:black">
+- reducer.js:
+</span>
+</h4>
+</div>
+
+```javascript
+export const reducer = (state, action) => {
+  if (action.type == "ADD_ITEM") {
+    const newPeople = [...state.people, action.payload]
+
+    return {
+      ...state,
+      people: newPeople,
+      isModelOpen: true,
+      modelContent: "item added",
+    }
+  }
+  if (action.type === "CLOSE_MODAL") {
+    return {
+      ...state,
+      isModelOpen: false,
+    }
+  }
+  if (action.type === "REMOVE_ITEM") {
+    const newPeople = state.people.filter(
+      (person) => person.id !== action.payload
+    )
+
+    return {
+      ...state,
+      people: newPeople,
+      isModelOpen: true,
+      modelContent: "item removed",
+    }
+  }
+  if (action.type === "NO_VALUE") {
+    return {
+      ...state,
+      isModelOpen: true,
+      modelContent: action.payload,
+    }
+  }
+}
+```
