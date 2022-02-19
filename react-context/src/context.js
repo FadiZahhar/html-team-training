@@ -1,6 +1,10 @@
-import React,{useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import Data from './data';
-import List from './list';
+import './list.css';
+
+
+// context api
+const PersonContext = React.createContext();
 
 function Context() {
 
@@ -11,13 +15,32 @@ function Context() {
    });
   };
 
-  
   return (
-      <section>
+    <PersonContext.Provider value={{removePerson}}>
     <h3>prop drilling</h3>
-    <List people={people} removePerson={removePerson}/>
-    </section>
-  )
+    <List people={people} />
+    </PersonContext.Provider>
+  );
+};
+
+const List = ({people})=> {
+  return (
+   <>
+   {people.map((person)=>{
+       return <SinglePerson key={person.id} {...person} />;  
+   })}
+</>
+);
+};
+
+const SinglePerson =({id, name})=>{
+    const {removePerson} = useContext(PersonContext);
+    return (
+        <div className='name'>
+            <h4>{name}</h4>
+            <button className='btn' onClick={()=>removePerson(id)}>Remove</button>
+        </div>
+    )
 }
 
 export default Context;
