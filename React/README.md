@@ -993,7 +993,7 @@ const ControlledInputs = () => {
 export default ControlledInputs
 ```
 
-## <mark>- React useRef Hook</mark>
+## <mark>- useRef Hook</mark>
 
 ```javascript
 The useRef Hook allows you to persist values between renders.
@@ -1123,7 +1123,7 @@ This time we use a combination of useState, useEffect, and useRef to keep track 
 In the useEffect, we are updating the useRef current value each time the inputValue is updated by entering text into the input field.
 ```
 
-## <mark>- React useReducer Hook</mark>
+## <mark>- useReducer Hook</mark>
 
 <div>
 <h4>
@@ -1317,4 +1317,84 @@ export const reducer = (state, action) => {
     }
   }
 }
+```
+
+## <mark>- Prop Drilling</mark>
+
+<div style="background:black">
+<h3>
+<span style="color:red">
+What is prop drilling?
+</span>
+</h3>
+
+<h4>
+<span style="color:green">
+Prop drilling (also called "threading") refers to the process you have to go through to get data to parts of the React Component tree. 
+</span>
+</h4>
+</div>
+
+<div style="background:black">
+<h3>
+<span style="color:red">
+Simple example of a stateful component:
+</span>
+</h3>
+</div>
+
+```javascript
+import React, { useState } from "react"
+import { data } from "../../../data"
+// more components
+// fix - context api, redux (for more complex cases)
+
+const PropDrilling = () => {
+  const [people, setPeople] = useState(data)
+  const removePerson = (id) => {
+    setPeople((people) => {
+      return people.filter((person) => id !== person.id)
+    })
+  }
+  return (
+    <section>
+      <h3>Props Drilling</h3>
+      <List people={people} removePerson={removePerson} />
+    </section>
+  )
+}
+
+const List = ({ people, removePerson }) => {
+  return (
+    <>
+      {people.map((person) => {
+        return (
+          <SinglePerson
+            key={person.id}
+            {...person}
+            removePerson={removePerson}
+          />
+        )
+      })}
+    </>
+  )
+}
+
+const SinglePerson = ({ id, name, removePerson }) => {
+  return (
+    <div className="item">
+      <h4>{name}</h4>
+      <button
+        className="btn"
+        onClick={() => {
+          removePerson(id)
+        }}
+      >
+        remove
+      </button>
+    </div>
+  )
+}
+
+export default PropDrilling
 ```
