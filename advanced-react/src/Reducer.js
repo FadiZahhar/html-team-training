@@ -2,12 +2,11 @@ import React, {useState, useReducer} from 'react';
 import Modal from './Modal';
 import './reducer.css';
 
-
+// reducer function
 const reducer = (state, action) => {
 
-
 if(action.type === 'ADD_ITEM'){
-const newPeople = [...state.people, action.name];
+const newPeople = [...state.people, action.payload];
 return {
     ...state,
     people : newPeople,
@@ -17,6 +16,21 @@ return {
 }
     };
 
+if(action.type === 'NO_VALUE'){
+return {
+    ...state,
+   
+    isModalOpen : true,
+    modalContent: 'Enter a value',
+}
+    };
+
+    if(action.type === 'CLOSE_MODAL'){
+    return {
+    ...state,
+    isModalOpen : false,
+}
+    };
 };
 
 
@@ -42,11 +56,13 @@ const handleSubmit = (e) => {
         dispatch({type: 'NO_VALUE'});
     }
 };
-
+const closeModal =() =>{
+    dispatch({type: 'CLOSE_MODAL'})
+}
   return (
     <>
     <div className='reducer'>
-{state.isModalOpen && <Modal modalContent={state.modalContent}/>}
+{state.isModalOpen && <Modal modalContent={state.modalContent} closeModal={closeModal}/>}
 <form onSubmit={handleSubmit}>
   <input type='text' value={name} onChange ={(e) => setName(e.target.value)}/>
     <button type='submit' >Add</button>
@@ -54,7 +70,8 @@ const handleSubmit = (e) => {
 <div>
    
 {state.people.map((person) =>{
-    return (<div>
+    return (
+    <div>
     <h4>{person.name}</h4>
     </div>)
 })}
