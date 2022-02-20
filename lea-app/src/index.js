@@ -10,7 +10,7 @@ function Greeting(){
   ) 
 }
 
-const Person = () => <h2>lea</h2>;
+const Person = () => <h2>Lea</h2>;
 const Message = () => {
   return <p>this is my message</p>;
 };
