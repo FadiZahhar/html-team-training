@@ -2,12 +2,12 @@
 
 //window.addEventListener('load',function)
 window.addEventListener('load', () => {
-  const img = document.querySelector('image')
+  const img = document.querySelector('img')
   console.log(img.width)
 })
 
 //the following will be loaded first but it will not be accurate cz it will not wait for the imag to be loaded it will fire up when DOM is ready and not when resoource are ready
 window.addEventListener('DOMContentLoaded', () => {
-  const img = document.querySelector('image')
+  const img = document.querySelector('img')
   console.log(img.width)
 })
