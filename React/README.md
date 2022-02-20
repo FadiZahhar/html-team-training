@@ -1449,10 +1449,11 @@ To create context, you must Import createContext and initialize it:
 <h4 style="color:blue;display:block">
 
 ```javascript
-import { useState, createContext } from "react";
-import ReactDOM from "react-dom";
+import { useState, createContext } from "react"
+import ReactDOM from "react-dom"
 const UserContext = createContext()
 ```
+
 </h4>
 </li>
 
@@ -1461,21 +1462,21 @@ Next we ll use the Context Provider to wrap the tree of components that need the
 
 Context Provider
 Wrap child components in the Context Provider and supply the state value.
+
 <h4 style="color:red;display:block">
 
 ```javascript
 function Component1() {
-const [user, setUser] = useState("Jesse Hall");
+  const [user, setUser] = useState("Jesse Hall")
 
-return (
-<UserContext.Provider value={user}>
-
-<Component2 user={user} />
-
-</UserContext.Provider>
-);
+  return (
+    <UserContext.Provider value={user}>
+      <Component2 user={user} />
+    </UserContext.Provider>
+  )
 }
 ```
+
 </h4>
 Now, all components in this tree will have access to the user Context.
 </li>
@@ -1556,4 +1557,109 @@ const SinglePerson = ({ id, name }) => {
 }
 
 export default ContextAPI
+```
+
+## <mark>- Custom Hooks</mark>
+
+<div style="background:black">
+<h3>
+<span style="color:red;text-decoration: underline;">
+Definition:
+</span>
+<div style="color:green;">
+Hooks are reusable functions.
+
+When you have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+
+Custom Hooks start with "use". Example: useFetch.
+
+</div>
+
+</h3>
+<h3>
+</h3>
+</div>
+
+<div style="background:black">
+<h3>
+<span style="color:red;text-decoration: underline;">
+Build a Hook
+</span>
+<div style="color:green;">
+The fetch logic may be needed in other components as well, so we will extract that into a custom Hook.
+
+In the following code, we are fetching data in our Home component and displaying it.
+
+Example Explained
+We have created a new file called useFetch.js containing a function called useFetch which contains all of the logic needed to fetch our data.
+
+We removed the hard-coded URL and replaced it with a url variable that can be passed to the custom Hook.
+
+Lastly, we are returning our data from our Hook.
+
+In index.js, we are importing our useFetch Hook and utilizing it like any other Hook. This is where we pass in the URL to fetch data from.
+
+Now we can reuse this custom Hook in any component to fetch data from any URL.
+
+</div>
+</h3>
+</div>
+
+<div>
+<h3>
+<span style="color:red;background:black;fontWeight:bold;text-indent: 50px;">
+index.js
+</span>
+</h3>
+</div>
+
+```javascript
+import React, { useState, useEffect } from "react"
+import { useFetch } from "./2-useFetch"
+
+const url = "https://course-api.com/javascript-store-products"
+
+const Example = () => {
+  const { loading, products } = useFetch(url)
+
+  console.log(products)
+
+  return (
+    <div>
+      <h2>{loading ? "loading..." : "data"}</h2>
+    </div>
+  )
+}
+
+export default Example
+```
+
+<div >
+<h3>
+<span style="color:green;background:black;fontWeight:bold;text-indent: 50px;">
+useFetch.js
+</span>
+</h3>
+</div>
+
+```javascript
+import { useState, useEffect } from "react"
+
+export const useFetch = (url) => {
+  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
+
+  const getProducts = async () => {
+    const response = await fetch(url)
+    const products = await response.json()
+    setProducts(products)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    getProducts()
+  }, [url])
+
+  return { loading, products }
+}
 ```
