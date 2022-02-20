@@ -1398,3 +1398,162 @@ const SinglePerson = ({ id, name, removePerson }) => {
 
 export default PropDrilling
 ```
+
+## <mark>- Context API / useContext</mark>
+
+<div style="background:black">
+<h3>
+<span style="color:green;text-decoration: underline;">
+What is useContext :
+</span>
+</h3>
+<h3>
+<span style="color:white">
+<ul>
+<li>
+React Context is a way to manage state globally.
+</li>
+<li>
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+</li>
+<li>
+The Problem
+State should be held by the highest parent component in the stack that requires access to the state.
+</li>
+<li>
+To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
+</li>
+<li>
+To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
+</li>
+<li>
+Even though components did not need the state, they had to pass the state along so that it could reach child component.
+</li>
+</ul>
+</span>
+
+</h3>
+</div>
+
+<div style="background:black">
+<h3>
+<span style="color:green;text-decoration: underline;">
+The solution is to create context.
+</span>
+</h3>
+<span style="color:white;display:block">
+<ul style="display:block">
+<li style="display:block">
+Create Context
+To create context, you must Import createContext and initialize it:
+<h4 style="color:blue;display:block">
+
+```javascript
+import { useState, createContext } from "react";
+import ReactDOM from "react-dom";
+const UserContext = createContext()
+```
+</h4>
+</li>
+
+<li>
+Next we ll use the Context Provider to wrap the tree of components that need the state Context.
+
+Context Provider
+Wrap child components in the Context Provider and supply the state value.
+<h4 style="color:red;display:block">
+
+```javascript
+function Component1() {
+const [user, setUser] = useState("Jesse Hall");
+
+return (
+<UserContext.Provider value={user}>
+
+<Component2 user={user} />
+
+</UserContext.Provider>
+);
+}
+```
+</h4>
+Now, all components in this tree will have access to the user Context.
+</li>
+
+<li>
+<span style="color:green">
+Use the useContext Hook
+</span>
+In order to use the Context in a child component, we need to access it using the useContext Hook.
+<ol>
+<li>
+First, include the useContext in the import statement:
+</li>
+
+<li>
+Then you can access the user Context in all components:
+</li>
+</ol>
+
+</li>
+</ul>
+</span>
+
+</div>
+
+<div>
+<h3>
+<span style="color:green;text-decoration: underline;">
+Full Example:
+</span>
+</h3>
+</div>
+
+```javascript
+import React, { useState, useContext } from "react"
+import { data } from "../../../data"
+// more components
+// fix - context api, redux (for more complex cases)
+
+const PersonContext = React.createContext()
+// two component- provider, consumer
+const ContextAPI = () => {
+  const [people, setPeople] = useState(data)
+  const removePerson = (id) => {
+    setPeople((people) => {
+      return people.filter((person) => person.id !== id)
+    })
+  }
+  return (
+    <PersonContext.Provider
+      value={{ removePerson: removePerson, people: people }}
+    >
+      <h3>Context API / useContext</h3>
+      <List />
+    </PersonContext.Provider>
+  )
+}
+
+const List = () => {
+  const { people } = useContext(PersonContext)
+  return (
+    <>
+      {people.map((person) => {
+        return <SinglePerson key={person.id} {...person} />
+      })}
+    </>
+  )
+}
+
+const SinglePerson = ({ id, name }) => {
+  const { removePerson } = useContext(PersonContext)
+  return (
+    <div className="item">
+      <h4>{name}</h4>
+      <button onClick={() => removePerson(id)}>remove</button>
+    </div>
+  )
+}
+
+export default ContextAPI
+```
