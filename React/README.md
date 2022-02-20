@@ -1663,3 +1663,81 @@ export const useFetch = (url) => {
   return { loading, products }
 }
 ```
+
+## <mark>- PropTypes Setup && Default Values</mark>
+
+<div >
+<h3>
+<span style="color:red;text-decoration: underline;">
+What is PropTypes and how to use it in React
+</span>
+<div style="color:green;background:black">
+PropTypes makes sure the props objects pass the correct types to a component.
+</div>
+<br /> 
+<div >
+Javascript is not a strongly typed language. Javascript functions are happy to accept data of different types than what we expected when we declared the function.
+</div>
+<br /> 
+<div >
+For example, we can pass a number to a function that expects a string. 
+What Javascript will do is try to convert the number into a string and go on to the next operation.
+</div>
+<br /> 
+<div >
+This may be what we want, but it may also lead to bugs and errors in the code when the operations performed on a piece of data are not what we thought we were doing because the data passed in is of a different type.
+</div>
+<br /> 
+<div >
+PropTypes is a library that helps in minimizing this problem in React by checking the types passed in the props object against a specification we set beforehand and to raise a warning if the types passed don't match the types expected.
+To use PropTypes we need to import the library at the top of the component where we want to use it, like so:
+</div>
+<br />
+
+```javascript
+import PropTypes from "prop-types"
+```
+
+<br /> 
+<div style="color:green;background:black">
+Next, we call the propTypes property on our component and pass it an object that specifies the props object expected types.
+</div>
+<br /> 
+<div style="color:red;">
+Example:
+</div>
+
+</h3>
+</div>
+
+```javascript
+import React from "react"
+import PropTypes from "prop-types"
+
+import defaultImage from "../../../assets/default-image.jpeg"
+
+const Product = ({ name, image, price }) => {
+  const url = image && image.url
+
+  return (
+    <article className="product">
+      <img src={url || defaultImage} alt={name} />
+      <h4>{name}</h4>
+      <p>{price || 9.99} $</p>
+    </article>
+  )
+}
+
+Product.propTypes = {
+  image: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+}
+
+// Product.defaultProps = {
+// image: defaultImage,
+// name: 'default',
+// price: 9.99,
+// }
+export default Product
+```
