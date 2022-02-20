@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 
-// JS
-// const input = document.getElementById('myText');
-// const inputValue = input.value
-// React
+
+
+//const input = document.getElementById('myText');\
+//const inputValue = input.value
 // value, onChange
 
+
 const ControlledInputs = () => {
+
   const [firstName, setFirstName] = useState('');
+
   const [email, setEmail] = useState('');
+  
   const [people, setPeople] = useState([]);
 
   const handleSubmit = (e) => {

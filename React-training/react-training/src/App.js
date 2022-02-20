@@ -13,6 +13,8 @@ import ShortCircuit from './Advanced/UseEffect/ShortCircuit';
 import ShowHide from './Advanced/UseEffect/ShowHide';
 import ControlledInputs from './Advanced/Form/ControlledInputs ';
 import UseRefBasics from './Advanced/UseRef\'/UseRefBasics';
+import Index from './Advanced/UseReducer/Index';
+import PropDrilling from './Advanced/PropDrilling';
 function App() {
   return (
     <div className="App">
@@ -57,6 +59,12 @@ function App() {
        <br/><br/><br/><br/>
        <h1>UseRef</h1>
        <UseRefBasics/>
+       <br/><br/><br/><br/>
+       <h1>UseReducer</h1>
+       <Index/>
+       <br/><br/><br/><br/>
+       <h1>PropDrilling</h1>
+       <PropDrilling/>
     </div>
   );
 }

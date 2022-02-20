@@ -5,7 +5,7 @@ export const MultipleReturn = () => {
  const [loading,setLoading]=useState(true);
  const[user,setUser]=useState('default user')
  const [isEroor,setIsError]=useState(false)
-const url="https://api.github.com/users/QuincyLarsons";
+const url='https://api.github.com/users/QuincyLarsons';
 
  useEffect(() => {
   fetch(url)
