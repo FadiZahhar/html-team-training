@@ -1,18 +1,36 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-function Greeting(){
+import './index.css';
+
+function BookList(){
   return(
     <div>
-      <Person />
-      <Message />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
     </div>
-  ) 
+  )
 }
 
-const Person = () => <h2>Lea</h2>;
-const Message = () => {
-  return <p>this is my message</p>;
-};
+const Book = () => {
+  return(
+    <article>
+      <Image />
+      <Title />
+      <Auth />
+    </article>
+  )
+}
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+const Image = () => (
+  <img src='https://tse3.mm.bing.net/th?id=OIP.o0-qbLxYrL764ujuDOgWYAHaE8&pid=Api&P=0&w=241&h=160'
+  alt=''/>
+)
+
+const Title = () => <h2>the boy</h2>;
+
+const Auth = () => <h4>lea h</h4>;
+
+ReactDom.render(<BookList />, document.getElementById('root'));
