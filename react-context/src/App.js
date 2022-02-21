@@ -1,7 +1,8 @@
 import React from 'react';
 import Context from './context';
 import './App.css';
-import Example from './costum hook/fetch';
+import Example from './custom hook/fetch';
+import ReactRout from './react router/Router';
 
 
 
@@ -9,7 +10,8 @@ function App() {
   return (
     <div className="App">
         <Context />
-         <Example/>   
+         <Example/>
+          <ReactRout/>
           
     </div>
   );
