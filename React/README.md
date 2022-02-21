@@ -1741,3 +1741,231 @@ Product.propTypes = {
 // }
 export default Product
 ```
+
+## <mark>- React-router-v6</mark>
+
+<div >
+<h3>
+
+<div style="color:green;background:black">
+Create React App doesn't include page routing.
+
+React Router is the most popular solution.
+
+</div>
+<br />
+
+<div >
+<span style="color:red;text-decoration: underline;">
+Add React Router
+</span>
+<br />
+<div>
+To add React Router in your application, run this in the terminal from the root directory of the application:
+</div>
+</div>
+<span>
+
+```javascript
+npm i react-router-dom@latest
+```
+
+</span>
+<br /> 
+<div >
+<span style="color:red;text-decoration: underline;">
+Folder Structure
+</span>
+<br />
+<div>
+To create an application with multiple page routes, let's first start with the file structure.
+
+Within the src folder, we'll create a folder named pages with several files:
+
+</div>
+
+```javascript
+src\pages\:
+
+Home.js
+About.js
+People.js
+Person.js
+Error.js
+```
+
+<div>
+Each file will contain a very basic React component.
+</div>
+</div>
+<br /> 
+<div >
+<span style="color:red;text-decoration: underline;">
+Basic Usage
+</span>
+<div>
+Now we will use our Router in our index.js file.
+
+Example
+Use React Router to route to pages based on URL:
+
+</div>
+<br />
+<span style="color:green;">
+index.js:
+</span>
+
+```javascript
+import React from "react"
+// react router
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+// pages
+import Home from "./Home"
+import About from "./About"
+import People from "./People"
+import Error from "./Error"
+import Person from "./Person"
+// navbar
+import Navbar from "./Navbar"
+const ReactRouterSetup = () => {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/person/:id" element={<Person />} />
+        <Route path="*" element={<Error />} />
+
+        {/* <Route path='/person/:id' children={<Person />} >
+        </Route> */}
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default ReactRouterSetup
+```
+
+</div>
+<br />
+
+<div >
+<span style="color:red;text-decoration: underline;">
+Example Explained
+</span>
+<div>
+
+```javascript
+We wrap our content first with <BrowserRouter>.
+
+Then we define our <Routes>. An application can have multiple <Routes>. Our basic example only uses one.
+
+<Route>s can be nested. The first <Route> has a path of / and renders the Layout component.
+
+The nested <Route>s inherit and add to the parent route.
+
+The Home component route does not have a path but has an index attribute. That specifies this route as the default route for the parent route, which is /.
+
+Setting the path to \* will act as a catch-all for any undefined URLs. This is great for a 404 error page.
+
+Pages / Components
+The Navbar component has <Outlet> and <Link> elements.
+
+The <Outlet> renders the current route selected.
+
+<Link> is used to set the URL and keep track of browsing history.
+
+Anytime we link to an internal path, we will use <Link> instead of <a href="">.
+
+The "navbar route" is a shared component that inserts common content on all pages, such as a navigation menu.
+```
+
+</div>
+</div>
+<br />
+<span style="color:green;">
+Navbar.js:
+</span>
+<br />
+
+```javascript
+import React from "react"
+import { Link } from "react-router-dom"
+const Navbar = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/people">People</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
+
+export default Navbar
+```
+
+<br />
+<div>
+<span style="color:red;text-decoration: underline;">
+Passing element on navigation:
+</span>
+
+<div style="color:green;">
+index.js
+</div>
+
+```javascript
+<Route path="/person/:id" element={<Person />} />  
+```
+</br>
+<div style="color:green;">
+People.js
+</div>
+
+```javascript
+<Link to={`/person/${person.id}`} >More Details</Link> 
+```
+</br>
+<div style="color:green;">
+Person.js
+</div>
+
+```javascript
+const { id } = useParams()
+```
+</br>
+<div style="color:green;">
+<ul>
+<li>
+In the index.js we have passed an object with a valiable of id when navigating to /person/
+</li>
+<li>
+In the People.js we gave the value to the id in the object by writing ${person.id}
+</li>
+<li>
+In the Person.js received this object and take the id value by <span style="color:red">spreading</span> the object :
+<span >
+
+```javascript
+const { id } = useParams()
+```
+</span>
+</li>
+</ul>
+</div>
+</div>
+
+</h3>
+</div>
