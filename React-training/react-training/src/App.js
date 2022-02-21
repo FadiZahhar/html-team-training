@@ -16,10 +16,15 @@ import UseRefBasics from './Advanced/UseRef\'/UseRefBasics';
 import Index from './Advanced/UseReducer/Index';
 import PropDrilling from './Advanced/PropDrilling';
 import ContextAPI from './Advanced/UseContext/ContextAPI';
-import Exemple from './Advanced/UseFetch/Exemple'
+import Exemple from './Advanced/UseFetch/Exemple';
+import INdex from './Advanced/Prop-Type/INdex';
+import {Route, Router ,Switch} from 'react-router-dom';
+
 function App() {
   return (
+  
     <div className="App">
+        {/* <Router> */}
        <BookList/>
        <ErrorExample/>
        <h1>UseStateBasics</h1>
@@ -75,7 +80,14 @@ function App() {
        <h1>useFetch</h1>
        <br/><br/>
        <Exemple/>
+       <br/><br/><br/><br/>
+       <h1>PropTypes</h1>
+       <br/><br/>
+       <INdex/>
+     
+        
     </div>
+    
   );
 }
 
