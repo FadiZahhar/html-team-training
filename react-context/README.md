@@ -58,6 +58,18 @@ function ThemedButton() {
 }
 ```
 
+## Costum hooks
+
+Building your own Hooks lets you extract component logic into reusable functions.
+
+Traditionally in React, we’ve had two popular ways to share stateful logic between components: render props and higher-order components. We will now look at how Hooks solve many of the same problems without forcing you to add more components to the tree.
+
+A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks. For example, **useFriendStatus**.
+
+There’s nothing new inside of it — the logic is copied from the components above. Just like in a component, make sure to only call other Hooks unconditionally at the top level of your custom Hook.
+
+Unlike a React component, a custom Hook doesn’t need to have a specific signature. We can decide what it takes as arguments, and what, if anything, it should return. In other words, it’s just like a normal function. Its name should always start with use so that you can tell at a glance that the rules of Hooks apply to it.
+
 ### usefull link
 
 [react official site](https://reactjs.org/docs/hooks-reference.html)
