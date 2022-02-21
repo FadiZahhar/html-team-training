@@ -26,7 +26,7 @@ const List = ({ people, removePerson }) => {
 
       {people.map((person) => {
         return (
-          <SinglePerson key={person.id}{...person} removePerson={removePerson}/>
+          <Singleperson key={person.id}{...person} removePerson={removePerson}/>
         );
       })}
       
@@ -35,7 +35,7 @@ const List = ({ people, removePerson }) => {
   );
 };
 
-const SinglePerson = ({ id, name, removePerson }) => {
+const Singleperson = ({ id, name, removePerson }) => {
 
   return (
 

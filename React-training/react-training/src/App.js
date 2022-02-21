@@ -15,6 +15,8 @@ import ControlledInputs from './Advanced/Form/ControlledInputs ';
 import UseRefBasics from './Advanced/UseRef\'/UseRefBasics';
 import Index from './Advanced/UseReducer/Index';
 import PropDrilling from './Advanced/PropDrilling';
+import ContextAPI from './Advanced/UseContext/ContextAPI';
+import Exemple from './Advanced/UseFetch/Exemple'
 function App() {
   return (
     <div className="App">
@@ -65,6 +67,14 @@ function App() {
        <br/><br/><br/><br/>
        <h1>PropDrilling</h1>
        <PropDrilling/>
+       <br/><br/><br/><br/>
+       <h1>Context API / useContext</h1>
+       <br/><br/>
+       <ContextAPI/>
+       <br/><br/><br/><br/>
+       <h1>useFetch</h1>
+       <br/><br/>
+       <Exemple/>
     </div>
   );
 }
