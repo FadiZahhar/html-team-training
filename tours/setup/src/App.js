@@ -33,6 +33,16 @@ function App() {
         <Loading />
       </main>
     )
+  }
+  if (tours.length == 0) {
+    return (
+      <main>
+        <div>
+          <h2>No more Tours</h2>
+          <button onClick={() => fetchTours()}> Refresh</button>
+        </div>
+      </main>
+    )
   } else {
     return (
       <main>
