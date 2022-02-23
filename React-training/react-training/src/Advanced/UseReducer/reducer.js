@@ -1,7 +1,7 @@
 export const reducer = (state, action) => {
 
  if (action.type === 'ADD_ITEM') {
-
+ //action.payload identifies for us which item we want to perform the action on.
    const newPeople = [...state.people, action.payload];
 
    return {

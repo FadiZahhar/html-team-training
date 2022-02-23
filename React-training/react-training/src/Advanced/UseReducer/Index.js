@@ -8,10 +8,11 @@ import { reducer } from './reducer';
 //It allows for custom state logic.
 /*
 The reducer function contains your custom state logic and the 
-initialStatecan be a simple value but generally will contain an object.
+initialState can be a simple value but generally will contain an object.
 
 The useReducer Hook returns the current stateand a dispatchmethod.
 */ 
+
 const defaultState = {
   people: [],
   isModalOpen: false,
@@ -29,6 +30,7 @@ const Index = () => {
 
     if (name) {
       const newItem = { id: new Date().getTime().toString(), name };
+     
       dispatch({ type: 'ADD_ITEM', payload: newItem });
       setName('');
 

@@ -84,7 +84,7 @@ function App() {
        <h1>PropTypes</h1>
        <br/><br/>
        <INdex/>
-     
+  
         
     </div>
     

@@ -19,7 +19,7 @@ const Person = () => {
   return (
     <div>
       <h1>{name}</h1>
-      <Link to='/people' className='btn'>
+      <Link to='/people'>
         Back To People
       </Link>
     </div>
