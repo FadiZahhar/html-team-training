@@ -8,11 +8,29 @@ import React, { useState } from 'react'
 const ControlledInputs = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(firstName)
-    console.log(email)
+    if (firstName && email) {
+      const person = {
+        id: new Date().getTime().toString(),
+        firstName: firstName,
+        email: email,
+      }
+      // const person = {
+      //   id: new Date().getTime().toString(),
+      //   firstName,
+      //   email,
+      // }
+      //this is a short hand in react because the key values are the same name of a variable
+      setPeople((person) => {
+        console.log(person)
+        return [...people, person]
+      })
+      setEmail('')
+      setFirstName('')
+    }
   }
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
+  const [people, setPeople] = useState([])
 
   return (
     <>
@@ -40,6 +58,16 @@ const ControlledInputs = () => {
           </div>
           <button type='submit'>add person</button>
         </form>
+
+        {people.map((person) => {
+          const { id, firstName, email } = person
+          return (
+            <div key={id} className='item'>
+              <h4>{firstName}</h4>
+              <p>{email}</p>
+            </div>
+          )
+        })}
       </article>
     </>
   )
