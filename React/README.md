@@ -1,28 +1,68 @@
-# React Js crash documentation
+<div>
+<h1>
+<span style="text-decoration:underline;color:green;">
+React Js crash documentation
+</span>
+</h1>
+<h3 style="color:black;background:white;padding-left:5px; font-weight:bold">
+<div>
+<span style="text-decoration:underline;color:green;">
+Declarative
+</span>
 
-## <mark>- JSX rules</mark>
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+Declarative views make your code more predictable and easier to debug.
+
+</div>
+<div>
+<span style="text-decoration:underline;color:green;">
+Component-Based
+</span>
+
+Build encapsulated components that manage their own state, then compose them to make complex UIs.
+
+Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+
+</div>
+<div>
+<span style="text-decoration:underline;color:green;">
+Learn Once, Write Anywhere
+</span>
+
+We don’t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
+
+React can also render on the server using Node and power mobile apps using React Native.
+
+</div>
+<div>
+<span style="text-decoration:underline;color:green;">
+JSX 
+</span>
+
+React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+
+</div>
+</h3>
+</div>
+
+## <mark>- Some JSX rules</mark>
 
 ### 1. `Return single element`
 
 ```javascript
 function Greating() {
   return <div> ... </div>
-}
-```
-
-### 2. `div/ section / article or Fragment`
-
-```javascript
-<div>...</div>
-
+  //or
 <section>...</section>
 
 <article>...</article>
 
 <React.Fragment>...</React.Fragment>
+}
 ```
 
-### 3. `Use camelCase for html attribute`
+### 2. `Use camelCase for html attribute`
 
 ```
 className instead of class
@@ -32,7 +72,7 @@ onClick instead of onclick
 etc ...
 ```
 
-### 4. `Close every element`
+### 3. `Close every element`
 
 ```javascript
 <img src="" alt="" />
@@ -42,7 +82,7 @@ etc ...
 <button></button>
 ```
 
-### 5. `Formatting`
+### 4. `Formatting`
 
 ```javascript
 function Greating() {
@@ -271,15 +311,18 @@ const books = [
 
 function BookList() {
   return (
-    <section className='bookList'>
-      {books.map((book) => {
+    <section className="bookList">
+      {
+        books.map((book) => {
          const { title, author, img, id } = book
          return (
           <Book key={id}
             title={title}
             author={author}
             img={img} />)
-      })}
+           }
+      )
+      }
 
     </section>
   )
@@ -334,7 +377,7 @@ function Book(props) {
 
 ```
 
-## <mark>- Event Basics</mark>
+<!-- ## <mark>- Event Basics</mark>
 
 ```javascript
 function Book(props) {
@@ -393,7 +436,7 @@ function Book(props) {
     </article>
   )
 }
-```
+``` -->
 
 ## <mark>- UseState</mark>
 
@@ -403,11 +446,6 @@ function Book(props) {
 The React useState Hook allows us to track state in a function component
 State generally refers to data or properites that need to be tracking in an application.
 
-Import useState
-To use the useState Hook, we first need to import it into our component.
-
-import { useState } from "react";
-Notice that we are destructuring useState from react as it is a named export.
 ```
 
 ### 2. `Initialize useState`
@@ -1839,9 +1877,6 @@ const ReactRouterSetup = () => {
         <Route path="/people" element={<People />} />
         <Route path="/person/:id" element={<Person />} />
         <Route path="*" element={<Error />} />
-
-        {/* <Route path='/person/:id' children={<Person />} >
-        </Route> */}
       </Routes>
     </BrowserRouter>
   )
@@ -1851,7 +1886,6 @@ export default ReactRouterSetup
 ```
 
 </div>
-<br />
 
 <div >
 <span style="color:red;text-decoration: underline;">
@@ -1868,14 +1902,11 @@ Then we define our <Routes>. An application can have multiple <Routes>. Our basi
 
 The nested <Route>s inherit and add to the parent route.
 
-The Home component route does not have a path but has an index attribute. That specifies this route as the default route for the parent route, which is /.
 
 Setting the path to \* will act as a catch-all for any undefined URLs. This is great for a 404 error page.
 
 Pages / Components
-The Navbar component has <Outlet> and <Link> elements.
-
-The <Outlet> renders the current route selected.
+The Navbar component has  <Link> elements.
 
 <Link> is used to set the URL and keep track of browsing history.
 
@@ -1916,6 +1947,35 @@ const Navbar = () => {
 export default Navbar
 ```
 
+<span style="color:green;">
+People.js:
+</span>
+<br />
+
+```javascript
+import React, { useState } from "react"
+import { data } from "../../../data"
+import { Link } from "react-router-dom"
+const People = () => {
+  const [people, setPeople] = useState(data)
+  return (
+    <div>
+      <h1>People Page</h1>
+      {people.map((person) => {
+        return (
+          <div key={person.id} className="item">
+            <h4>{person.name}</h4>
+            <Link to={`/person/${person.id}`}>More Details</Link>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+export default People
+```
+
 <br />
 <div>
 <span style="color:red;text-decoration: underline;">
@@ -1927,16 +1987,18 @@ index.js
 </div>
 
 ```javascript
-<Route path="/person/:id" element={<Person />} />  
+<Route path="/person/:id" element={<Person />} />
 ```
+
 </br>
 <div style="color:green;">
 People.js
 </div>
 
 ```javascript
-<Link to={`/person/${person.id}`} >More Details</Link> 
+<Link to={`/person/${person.id}`}>More Details</Link>
 ```
+
 </br>
 <div style="color:green;">
 Person.js
@@ -1945,27 +2007,33 @@ Person.js
 ```javascript
 const { id } = useParams()
 ```
+
 </br>
-<div style="color:green;">
+<div >
 <ul>
 <li>
-In the index.js we have passed an object with a valiable of id when navigating to /person/
+In the <span style="color:green">index.js</span> we have passed an object with a valiable of id when navigating to <span style="color:red">/person/</span>
 </li>
 <li>
-In the People.js we gave the value to the id in the object by writing ${person.id}
+In the <span style="color:green">People.js</span> we gave the value to the id in the object by writing <span style="color:red">${person.id}</span>
 </li>
 <li>
-In the Person.js received this object and take the id value by <span style="color:red">spreading</span> the object :
-<span >
-
-```javascript
-const { id } = useParams()
-```
-</span>
+<div>
+In the <span style="color:green">Person.js</span> received this object and take the id value by <span style="color:red">destructuring</span> the object:</br>
+<span style="color:red">const { id } = useParams()</span>
+</div>
 </li>
 </ul>
 </div>
 </div>
 
 </h3>
+</div>
+
+
+
+
+<div>
+
+<h2>memo useMemo and useCallback</h2>
 </div>
