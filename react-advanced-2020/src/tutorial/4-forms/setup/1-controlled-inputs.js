@@ -9,7 +9,7 @@ const ControlledInputs = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (firstName && email) {
-      const people = {
+      const person = {
         id: new Date().getTime().toString(),
         firstName: firstName,
         email: email,
@@ -20,8 +20,7 @@ const ControlledInputs = () => {
       //   email,
       // }
       //this is a short hand in react because the key values are the same name of a variable
-      setPeople((person) => {
-        console.log(person)
+      setPeople((people) => {
         return [...people, person]
       })
       setEmail('')
