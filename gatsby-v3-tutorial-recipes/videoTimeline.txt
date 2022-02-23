@@ -1,0 +1,97 @@
+Intro 00:00
+Gatsby Info 01:06
+Course Structure 02:56
+Course Requirements 03:38
+Vs Code 05:19
+Module Intro 06:12
+Install Gatsby-Cli 07:39
+Setup New Gatsby Project 09:39
+Folder Structure 15:17
+First Page 29:52
+Error Page 38:36
+Nested Structure 41:11
+Links 44:51
+Navbar 51:31
+Layout Component 56:36
+CSS Module Intro 1:05:54
+Inline CSS 1:06:57
+Global CSS 1:08:37
+CSS Naming Issues 1:14:11
+CSS Modules 1:18:00
+Styled-Components 1:28:14
+House Cleaning 1:41:01
+Styles 1:48:43
+Footer 1:53:15
+Error Page 1:56:41
+Contact Page 1:57:48
+Assets And Icons 2:03:55
+Navbar Setup 2:11:06
+Navbar Logic 2:20:21
+Gatsby Image Info 2:25:01
+Sandbox Setup 2:28:40
+Install Plugin 2:34:46
+Static Image Setup 2:38:25
+Shared Props And Options 2:45:51
+Options Example 2:50:30
+All Layouts 2:58:20
+Height 3:04:39
+About Page 3:09:14
+Hero Page 3:19:06
+Gatsby And GraphQL Intro 3:25:29
+Gatsby DataLayer In A Nutshell 3:28:49
+GraphiQL Interface 3:30:30
+SiteMetadata 3:36:45
+First Query 3:42:24
+Explorer 3:51:37
+Static Query Vs Page Query 3:53:42
+UseStaticQuery Hook - Code Exporter 3:55:08
+UseStaticQuery, GraphQL - From Scratch 4:01:24
+Field Alias 4:11:55
+Query Keyword, Name And Gatsby Clean 4:14:56
+Page Query 4:18:09
+Install SOURCE-FILESYSTEM Plugin 4:25:10
+AllFile Field 4:35:23
+Query Arguments 4:41:40
+Static Path Fix 4:49:53
+File - Field 4:51:16
+SourceInstanceName - Argument 4:54:38
+Gallery Setup 4:56:46
+GatsbyImageData - Field 5:00:37
+Render Gallery 5:08:46
+GetImage - Helper Function 5:20:31
+Local VS External Data 5:25:13
+Headless CMS 5:26:40
+Contentful 5:28:39
+Setup Contentful Account 5:29:27
+Content-Type 5:33:04
+Content 5:39:57
+Connect Gatsby - Contentful 5:47:26
+ENV Variables 5:52:26
+AllContentfulRecipe - Field 5:58:38
+AllRecipes Component 6:05:47
+RecipesList Component 6:14:50
+Featured Recipes 6:26:49
+Utils Setup 6:37:40
+Helper Function 6:42:37
+TagsList 6:50:17
+Tags Page 6:54:04
+Recipe Template Page Setup 7:00:12
+Recipe Template Page Walkthrough 7:04:47
+Slugify 7:13:50
+Query Variables 7:18:05
+Recipe Template Query 7:26:55
+Recipe Template Return 7:34:17
+GATSBY-NODE.JS Setup 7:46:35
+Create Tag Pages Programmatically 7:50:33
+Tag Template Return 8:08:26
+Possible Bug Fix 8:19:57
+Fonts 8:26:43
+Contact Form 8:32:30
+FAVICON 8:37:06
+SEO Setup 8:39:13
+SEO - Props 8:45:30
+SEO - Complete 8:51:24
+Netlify Info 9:00:55
+Netlify - Drag And Drop 9:01:48
+Continuous Deployment 9:05:22
+Webhooks 9:14:34
