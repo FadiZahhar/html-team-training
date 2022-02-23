@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useFetch} from './useFetch';
 
 
-const url = 'https://swapi.dev/api/people';
+const url = 'http://course-api.com/javascript-store-products';
 
 const Example = () => {
 
