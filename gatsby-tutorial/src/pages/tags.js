@@ -1,16 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-
-function about() {
+function tags() {
   return (
-    
     <Layout>
-
-        <h1>about page</h1>
-        
+        <h1>Tags</h1>
     </Layout>
   )
 }
 
-export default about
+export default tags;
