@@ -2,30 +2,41 @@ import React, { useState, useReducer } from 'react'
 import Modal from './Modal'
 import { data } from '../../../data'
 // reducer function
-
+const reducer = (state, action) => {
+  if (action.type === 'ADD_ITEM') {
+    const newpeople = [...state.people, action.payload]
+    return {
+      ...state,
+      people: newpeople,
+      isModelOpen: true,
+      modelContent: 'person added',
+    }
+  }
+  if (action.type == 'NO_VALUE') {
+    return { ...state, isModelOpen: true, modelContent: 'no entry is found' }
+  }
+  throw new Error('no matching')
+}
+const defaultState = {
+  people: [],
+  isModelOpen: false,
+  modelContent: '',
+}
 const Index = () => {
   const [name, setName] = useState('')
-  const [people, setPeople] = useState(data)
-  const [showModel, setShowModel] = useState(false)
+  const [state, dispatch] = useReducer(reducer, defaultState)
   const handleSubmit = (e) => {
     e.preventDefault()
     if (name) {
-      setShowModel(true)
-      setPeople([
-        ...people,
-        {
-          id: new Date().getTime().toString(),
-          name: name,
-        },
-      ])
-      setName('')
+      const newItem = { id: new Date().setTime().toString(), name }
+      dispatch({ type: 'ADD_ITEM', payload: newItem })
     } else {
-      setShowModel(true)
+      dispatch({ type: 'NO_VALUE' })
     }
   }
   return (
     <>
-      {showModel && <Modal />}
+      {state.isModelOpen && <Modal modelContent={state.modelContent} />}
       <form onSubmit={handleSubmit} className='form'>
         <div>
           <input
@@ -36,7 +47,7 @@ const Index = () => {
         </div>
         <button type='submit'> add</button>
       </form>
-      {people.map((person) => {
+      {state.people.map((person) => {
         return (
           <div key={person.id}>
             <h4>{person.name}</h4>
