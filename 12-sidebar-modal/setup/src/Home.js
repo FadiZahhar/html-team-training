@@ -5,14 +5,15 @@ import { useGlobalContext } from './context'
 const Home = () => {
   // const data = useContext(AppContext)
   //instead of all of these imports we can use our custom hook
-  const data = useGlobalContext()
-  console.log(data)
+  const { openSidebar, openModel } = useGlobalContext()
   return (
     <main>
-      <button className='sidebar-toggle'>
+      <button className='sidebar-toggle' onClick={openSidebar}>
         <FaBars />
       </button>
-      <button className='btn'>show Model</button>
+      <button className='btn' onClick={openModel}>
+        show Model
+      </button>
     </main>
   )
 }
