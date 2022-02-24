@@ -2,21 +2,7 @@ import React, { useState, useReducer } from 'react'
 import Modal from './Modal'
 import { data } from '../../../data'
 // reducer function
-const reducer = (state, action) => {
-  if (action.type === 'ADD_ITEM') {
-    const newpeople = [...state.people, action.payload]
-    return {
-      ...state,
-      people: newpeople,
-      isModelOpen: true,
-      modelContent: 'person added',
-    }
-  }
-  if (action.type == 'NO_VALUE') {
-    return { ...state, isModelOpen: true, modelContent: 'no entry is found' }
-  }
-  throw new Error('no matching')
-}
+import { reducer } from './reducer'
 const defaultState = {
   people: [],
   isModelOpen: false,
@@ -34,9 +20,15 @@ const Index = () => {
       dispatch({ type: 'NO_VALUE' })
     }
   }
+
+  const closeModel = () => {
+    dispatch({ type: 'CLOSE_MODEL' })
+  }
   return (
     <>
-      {state.isModelOpen && <Modal modelContent={state.modelContent} />}
+      {state.isModelOpen && (
+        <Modal closeModel={closeModel} modelContent={state.modelContent} />
+      )}
       <form onSubmit={handleSubmit} className='form'>
         <div>
           <input
@@ -49,8 +41,15 @@ const Index = () => {
       </form>
       {state.people.map((person) => {
         return (
-          <div key={person.id}>
+          <div key={person.id} className='item'>
             <h4>{person.name}</h4>
+            <button
+              onClick={() => {
+                dispatch({ type: 'REMOVE_ITEM', payload: person.id })
+              }}
+            >
+              Remove
+            </button>
           </div>
         )
       })}
