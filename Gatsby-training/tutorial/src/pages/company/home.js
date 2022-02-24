@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 
 const home = () => {
   return (
-    <div>home
-     <Link to='../'>index</Link>
+    <div>
+      company home
     </div>
   )
 }

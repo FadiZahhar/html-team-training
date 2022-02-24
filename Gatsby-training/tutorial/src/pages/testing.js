@@ -3,8 +3,10 @@ import { Link } from "gatsby"
 
 export default ()  => {
   return (
-    <div>testing
-       <Link to='/'>Index</Link>
+    <div>
+      about
+      <br/>
+       <Link to='/'>Home</Link>
     </div>
   )
 }
