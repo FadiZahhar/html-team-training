@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Layout from "../components/layout";
 import {page,text} from "../exemples/home.module.css";
 import { ExampleButton} from "../exemples/button";
+import "normalize.css";
+// import "../assets/css/main.css"
 export default function Home() {
   return<Layout>
     <div className={page}>
