@@ -29,5 +29,13 @@ complexData:[
         name: `images`,
         path: `${__dirname}/src/assets/images`,
       },
-    },],
+    },
+  {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
+  ],
 }
