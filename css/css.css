@@ -92,3 +92,131 @@ ex:
   color: rgba(255, 0, 0, 0.3);
   background: yellow;
 }
+
+/* Pixels - absolute values,one dot on the screen 
+font-size 
+width - width of an element
+height - height of the element
+*/
+
+.xp {
+  font-size: 60px;
+  background: red;
+  width: 200px;
+  height: 400px;
+}
+
+/* percent - relative unit/value - depends on the parent */
+
+.inner {
+  width: 50%;
+  height: 50%;
+  background: red;
+}
+
+.outer {
+  width: 200px;
+  height: 400px;
+  background: blue;
+}
+
+/* 
+  em - relative, depends on parent
+  1em-16px browser style
+  2em = base value(16px) * 2 = 32px
+  2em= base value(10px)*2=10px
+ */
+
+.absollute {
+  font-size: 32px;
+}
+.relative {
+  font-size: 2em;
+}
+
+/* 
+  rem - relative,depends on root
+  1rem=base value (16px) * number(1)
+*/
+html {
+  font-size: 20px;
+}
+
+.absollute2 {
+  font-size: 32px;
+}
+.relative2 {
+  font-size: 2rem;
+}
+
+/* viewport units
+  vh - height - percent  ofn the screen
+  vw - width - percentmof the screen 
+*/
+/* * {
+  margin: 0px;
+} */
+.hero {
+  background: green;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* calc()
+  perform math operations +-*
+  mix and match values
+ */
+* {
+  margin: 0;
+}
+
+.navbar {
+  background: blue;
+  height: 100px;
+  color: white;
+  font-size: 3em;
+}
+/* min-height */
+.banner {
+  background: red;
+  min-height: calc(100vh - 6rem);
+  max-height: 90vh;
+  overflow: scroll;
+  overflow: hidden;
+}
+/* auto & overflow*/
+.auto {
+  background: green;
+  width: 20rem;
+  height: 25rem;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+/* font-size  -  size of the fonts 
+  font-family - describes the font 
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Shizuru&display=swap");
+
+body {
+  font-family: sans-serif;
+}
+
+.p {
+  font-family: "Shizuru", cursive;
+  color: rgb(20, 224, 129);
+  font-weight: 900;
+  /* font-weight:bold; */
+  /* font-weight:lighter; */
+  font-style: italic;
+  font-style: oblique;
+  font-style: normal;
+}
+
+/* text-align text-indent*/
+
+.p {
+  text-align: center;
+  text-indent: 6rem;
+}
