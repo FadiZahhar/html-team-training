@@ -1,4 +1,94 @@
-h2 {
+/*css rule*/
+/* selector */
+/* decleration block*/
+/* decleration */
+/* property */
+/* value */
+
+/* grouping */
+h2,
+p {
   color: red;
-  font-size: 50px;
+}
+
+/* id */
+/* id are unique */
+#title {
+  color: aquamarine;
+  background: black;
+}
+
+/* class */
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
+  background-color: blueviolet;
+}
+
+.upercase {
+  text-transform: uppercase;
+}
+
+spam {
+  text-transform: uppercase;
+  color: aqua;
+}
+
+/* Inheretance*/
+
+body {
+  color: blue;
+  font-family: monospace;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.special {
+  color: green;
+  font-size: 30px;
+}
+
+/* last rule and specificity * universal selector */
+/* specificity */
+#redid {
+  color: red;
+}
+.specials {
+  color: blueviolet;
+}
+/* last rule */
+p {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+/* * */
+* {
+  color: brown;
+}
+
+/* background & backgrond-color */
+/* color names & rgb,rgba.hex*/
+/* 
+hex values #rrggbb 
+123456789ABCDEF
+ex:
+  #ff0000-red
+  #00ff00-green
+  #0000ff-blue
+*/
+.first {
+  color: rgb(255, 255, 255);
+  background-color: #000;
+}
+
+.second {
+  color: rgba(255, 0, 0, 0.3);
+  background: yellow;
 }
