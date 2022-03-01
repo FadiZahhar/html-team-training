@@ -462,3 +462,142 @@ opacity:0 preserve the space
 .visibility {
   visibility: hidden;
 }
+
+/*background img */
+
+.big-img,
+.small-img,
+.folder-img {
+  min-height: 100vh;
+  height: 300px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-img {
+  background: url("../img/king-chest.jpg");
+  /* background-repeat: round;
+  background-repeat: no-repeat; */
+
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain; */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.small-img {
+  background: url("../img/black-angel.jpg");
+  background-repeat: no-repeat;
+  /* background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-repeat: space;
+  background-repeat: round;
+  background-repeat: no-repeat; */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* 
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.folder-img {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("../img/purple-angel.jpg") center/cover no-repeat fixed;
+  /* background-repeat: no-repeat; */
+
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain;
+  background-position: center;
+
+  background-position: 100% 100%; */
+}
+
+.one1,
+.two2,
+.three3,
+.four4,
+.five5,
+.six6 {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+}
+
+.one1 {
+  background: linear-gradient(to top, blue, green);
+}
+.two2 {
+  background: linear-gradient(to left, blue, green, red, yellow);
+}
+.three3 {
+  background: linear-gradient(315deg, blue, green, red, yellow);
+}
+.four4 {
+  background: linear-gradient(to top right, blue, green, red, yellow);
+}
+
+.five5 {
+  background: linear-gradient(blue 80%, yellow);
+}
+
+.six6 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+/* float,clear */
+.bannner {
+  border: 5px solid red;
+  padding: 10px;
+}
+
+.img {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+/* absolute,relative */
+
+.absolutediv {
+  border: 3px solid red;
+  background: yellow;
+  margin-top: 40px;
+  color: white;
+}
+
+.absolutep1 {
+  background: blue;
+  color: white;
+  position: relative;
+  bottom: 2rem;
+  right: 40px;
+}
+.absolutep2 {
+  background: green;
+  color: white;
+  position: absolute;
+  top: 9200px;
+  left: 40px;
+}
+
+.special {
+  background: pink;
+  color: white;
+}
