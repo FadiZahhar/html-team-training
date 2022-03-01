@@ -601,3 +601,39 @@ opacity:0 preserve the space
   background: pink;
   color: white;
 }
+
+.nave {
+  background: red;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  position: sticky;
+  margin-top: 0;
+  top: 0;
+
+  width: 100%;
+}
+
+/* media queries */
+.media {
+  background: blue;
+}
+
+.querie {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 576px) {
+  .media {
+    background: yellow;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .media {
+    background: green;
+  }
+}
