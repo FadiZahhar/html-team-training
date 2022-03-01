@@ -220,3 +220,155 @@ body {
   text-align: center;
   text-indent: 6rem;
 }
+
+/* 
+  line-height - if number * by font-size
+  letter-spacing
+  word-spacing
+  text-transform
+  text-decoration
+*/
+a {
+  /* font-size: 3rem; */
+  text-decoration: none;
+  color: aqua;
+}
+body {
+  line-height: 40px;
+  line-height: 2;
+}
+
+.h1ss {
+  font-size: 50px;
+  text-decoration: line-through;
+  text-transform: uppercase;
+}
+
+.one {
+  letter-spacing: 5px;
+  text-decoration: overline;
+}
+
+.two {
+  word-spacing: 10px;
+}
+
+.three {
+  text-transform: capitalize;
+}
+
+/* box model */
+
+/* border, padding , margin , outline*/
+.border,
+.borderp {
+  color: white;
+}
+/* * {
+  margin: 0;
+} */
+.border {
+  background: red;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  margin: 3rem;
+  /* border-style: solid;
+  border-width: 10px;
+  border-color: chartreuse; */
+
+  /* border-bottom: 10px dotted green; */
+
+  border-bottom-style: double;
+  border-bottom-color: aqua;
+  border-bottom-width: 20px;
+  border-radius: 50%;
+}
+
+.borderp {
+  background: blue;
+  /* padding: 40px; */
+  /* padding: 40px 20px; */
+  padding: 5px 20px 10px 15px;
+  margin-top: -90px;
+  margin-top: 90px;
+  border: 1rem dashed red;
+  border-radius: 50px;
+}
+
+.links {
+  margin: 3rem;
+}
+
+.linkone,
+.linktwo {
+  background: green;
+  text-decoration: none;
+  padding: 1.2rem 1.5rem;
+  color: #222;
+  text-transform: uppercase;
+  margin: 20px 20px;
+}
+
+.linkone {
+  border: 0.2rem solid #222;
+  outline: 0.2rem solid red;
+  outline-offset: -5px;
+}
+
+.linktwo {
+  outline-width: 0.2rem;
+  outline-color: #222;
+  outline-style: solid;
+  outline-offset: 10px;
+}
+/* 
+  display inline and block
+  elements have it set by default
+  block: always starts a new line and spans full width
+  inline: does not start a new line and spans only content
+*/
+
+.block {
+  background: blue;
+  color: white;
+  /* display: inline; */
+
+  /* width: 300px;
+  margin: 0 auto; */
+}
+
+.inline {
+  background: red;
+  color: white;
+  /* display: block; */
+}
+
+/* body {
+  text-align: center;
+} */
+
+/* navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  color: red;
+  text-decoration: none;
+  letter-spacing: 2px;
+  background: #222;
+  padding: 10px;
+  display: block;
+}
