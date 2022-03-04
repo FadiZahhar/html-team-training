@@ -637,3 +637,37 @@ opacity:0 preserve the space
     background: green;
   }
 }
+
+/* z-index */
+
+.img2 {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.divclass {
+  margin: 20px;
+  width: 80vw;
+  height: 70vh;
+  border: 5px solid green;
+  position: relative;
+}
+
+.im1 {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.im2 {
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+}
+
+.im3 {
+  top: 100px;
+  left: 100px;
+  z-index: 1;
+}
