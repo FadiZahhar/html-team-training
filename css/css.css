@@ -589,13 +589,13 @@ opacity:0 preserve the space
   bottom: 2rem;
   right: 40px;
 }
-.absolutep2 {
+/* .absolutep2 {
   background: green;
   color: white;
   position: absolute;
   top: 9200px;
   left: 40px;
-}
+} */
 
 .special {
   background: pink;
@@ -728,4 +728,34 @@ opacity:0 preserve the space
 
 .as:active {
   color: green;
+}
+
+/* transform:translate(),scale(),rotate(),skew()
+transition-property
+*/
+
+.colorsb {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+.colorsb:hover {
+  background: coral;
+}
+.re {
+  background: red;
+  transform: translate(200px, 300px);
+}
+.blu {
+  background: blue;
+  transform: scale(0.5);
+  transform: skew(40deg, 30deg);
+}
+
+.gre {
+  background: green;
+  transform: rotate(45deg);
+  transition-property: background;
+  transition-duration: 4s;
+  transition-delay: 2s;
 }
