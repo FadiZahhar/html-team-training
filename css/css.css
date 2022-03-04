@@ -687,3 +687,45 @@ opacity:0 preserve the space
   font-size: 2rem;
   color: red;
 }
+/*descendent and direct child*/
+.headers .h1class {
+  color: blue;
+}
+
+.headers > .h1class {
+  color: purple;
+}
+
+/* ::first-letter ::firstline :hover */
+
+.firstpi {
+  background-color: white;
+  color: #000;
+}
+.firstpi::first-letter {
+  font-size: 150%;
+}
+
+.firstpi::first-line {
+  font-weight: bold;
+}
+
+.firstpi:hover {
+  color: blue;
+}
+
+/* :link unvisitted
+:visited
+:active */
+
+.as:link {
+  color: red;
+}
+
+.as:visited {
+  color: blue;
+}
+
+.as:active {
+  color: green;
+}
