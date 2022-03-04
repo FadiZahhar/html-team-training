@@ -671,3 +671,19 @@ opacity:0 preserve the space
   left: 100px;
   z-index: 1;
 }
+
+/* ::befor after always need a content or width and height*/
+
+.pclass::before {
+  content: "hello here ";
+  font-weight: bold;
+  font-size: 2rem;
+  color: red;
+}
+
+.pclass::after {
+  content: "hello  there";
+  font-weight: bold;
+  font-size: 2rem;
+  color: red;
+}
