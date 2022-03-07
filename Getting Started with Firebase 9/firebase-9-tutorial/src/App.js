@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Formik } from 'formik';
 import { initializeApp } from 'firebase/app'
 
 import {
-  getFirestore, collection, getDocs
+  getFirestore, collection, getDocs,
+  addDoc, deleteDoc, doc
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -37,10 +39,135 @@ getDocs(colRef).then((snapshot) => {
 ///
 function App() {
 
+  const addToFirebase = (data) => {
+    addDoc(colRef, { ...data }).then(() => {
 
+    })
+
+  }
+  const removeFromFirebase = (data) => {
+    const docRef = doc(db, 'books', data.id)
+    deleteDoc(docRef).then(() => {
+
+    })
+  }
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className='page'>
+
+
+      <div className='add'>
+        <h1>Add </h1>
+        <Formik
+          initialValues={{ title: '', author: '' }}
+          validate={values => {
+            const errors = {};
+            if (!values.title) {
+              errors.title = 'Required';
+            }
+            if (!values.author) {
+              errors.author = 'Required';
+            }
+            return errors;
+          }}
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            addToFirebase(values)
+            setSubmitting(false)
+            resetForm()
+
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <input
+                  type="text"
+                  name="title"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.title}
+                  placeholder={'title'}
+                />
+                {errors.title && touched.title && errors.title}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="author"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.author}
+                  placeholder={'author'}
+                />
+                {errors.author && touched.author && errors.author}
+              </div>
+              <div>
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </div>
+            </form>
+          )}
+        </Formik>
+      </div>
+
+      <div className='remove'>
+        <h1>Remove</h1>
+        <Formik
+          initialValues={{ id: '' }}
+          validate={values => {
+            const errors = {};
+            if (!values.id) {
+              errors.title = 'Required';
+            }
+
+            return errors;
+          }}
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            removeFromFirebase(values)
+            setSubmitting(false)
+            resetForm()
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <input
+                  type="text"
+                  name="id"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.id}
+                  placeholder={'id'}
+                />
+                {errors.id && touched.id && errors.id}
+              </div>
+              <div>
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </div>
+            </form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 }
