@@ -1,0 +1,12 @@
+.page {
+  background-color: rgb(38, 170, 21);
+}
+.page h1 {
+  color: darkred;
+}
+.text {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}

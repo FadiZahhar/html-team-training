@@ -1,0 +1,12 @@
+.page {
+  background-color: rgb(98, 205, 224);
+}
+.page h1 {
+  color: green;
+}
+.text {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+}
