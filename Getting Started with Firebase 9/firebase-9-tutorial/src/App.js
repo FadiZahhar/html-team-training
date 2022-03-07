@@ -36,7 +36,6 @@ getDocs(colRef).then((snapshot) => {
 })
 ///
 function App() {
-  const [books, setBooks] = useState('')
 
 
   return (
