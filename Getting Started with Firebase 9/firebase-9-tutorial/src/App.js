@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { initializeApp } from 'firebase/app'
 
 import {
-  getFirestore, collection, getDocs,
+  getFirestore, collection, onSnapshot,
   addDoc, deleteDoc, doc
 } from 'firebase/firestore'
 
@@ -26,7 +26,9 @@ const db = getFirestore()
 // collection ref
 const colRef = collection(db, 'books')
 
-// get collection data
+// collection data
+
+/*
 getDocs(colRef).then((snapshot) => {
   let books = []
   snapshot.docs.forEach((doc) => {
@@ -36,19 +38,28 @@ getDocs(colRef).then((snapshot) => {
 }).catch(error => {
   console.log(error.message);
 })
+*/
+
+
+// real time collection data
+onSnapshot(colRef, (snapshot) => {
+  let books = []
+  snapshot.docs.forEach((doc) => {
+    books.push({ ...doc.data(), id: doc.id })
+  })
+  console.log(books);
+})
 ///
 function App() {
 
   const addToFirebase = (data) => {
     addDoc(colRef, { ...data }).then(() => {
-
     })
 
   }
   const removeFromFirebase = (data) => {
     const docRef = doc(db, 'books', data.id)
     deleteDoc(docRef).then(() => {
-
     })
   }
   return (
