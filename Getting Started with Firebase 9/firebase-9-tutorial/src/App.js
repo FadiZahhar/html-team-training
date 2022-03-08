@@ -7,7 +7,8 @@ import {
   getFirestore, collection, onSnapshot,
   addDoc, deleteDoc, doc,
   query, where,
-  orderBy, serverTimestamp
+  orderBy, serverTimestamp,
+  getDoc
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -55,6 +56,20 @@ onSnapshot(q, (snapshot) => {
   console.log(books);
 })
 ///
+
+
+
+// get single document
+
+const docRef = doc(db, 'books', 'V7MIuAfcK2pJe9dpANLt')
+getDoc(docRef).then((doc) => {
+  console.log(doc.data(), doc.id);
+})
+
+onSnapshot(docRef, (doc) => {
+  console.log(doc.data(), doc.id);
+})
+
 function App() {
 
   const addToFirebase = (data) => {
