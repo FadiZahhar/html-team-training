@@ -6,7 +6,8 @@ import { initializeApp } from 'firebase/app'
 import {
   getFirestore, collection, onSnapshot,
   addDoc, deleteDoc, doc,
-  query, where
+  query, where,
+  orderBy, serverTimestamp
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -28,7 +29,7 @@ const db = getFirestore()
 const colRef = collection(db, 'books')
 
 // query collection
-const q = query(colRef, where('author', '==', 'Ali El-Helbawi'))
+const q = query(colRef, where('author', '==', 'Ali El-Helbawi'), orderBy('createdAt', 'asc'))
 
 // collection data
 
@@ -57,7 +58,7 @@ onSnapshot(q, (snapshot) => {
 function App() {
 
   const addToFirebase = (data) => {
-    addDoc(colRef, { ...data }).then(() => {
+    addDoc(colRef, { ...data, createdAt: serverTimestamp() }).then(() => {
     })
 
   }
