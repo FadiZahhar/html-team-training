@@ -5,7 +5,8 @@ import { initializeApp } from 'firebase/app'
 
 import {
   getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc
+  addDoc, deleteDoc, doc,
+  query, where
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -26,6 +27,9 @@ const db = getFirestore()
 // collection ref
 const colRef = collection(db, 'books')
 
+// query collection
+const q = query(colRef, where('author', '==', 'Ali El-Helbawi'))
+
 // collection data
 
 /*
@@ -42,7 +46,7 @@ getDocs(colRef).then((snapshot) => {
 
 
 // real time collection data
-onSnapshot(colRef, (snapshot) => {
+onSnapshot(q, (snapshot) => {
   let books = []
   snapshot.docs.forEach((doc) => {
     books.push({ ...doc.data(), id: doc.id })
@@ -179,6 +183,17 @@ function App() {
           )}
         </Formik>
       </div>
+      {/* <div >
+        {books.map((book) => {
+          return (
+            <div key={book.id} className='books '>
+              <h1>{`Author: ${book.author}`}</h1>
+              <h1>{`title: ${book.title}`}</h1>
+            </div>
+          )
+        }
+        )}
+      </div> */}
     </div>
   );
 }
