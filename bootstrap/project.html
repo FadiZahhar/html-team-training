@@ -368,6 +368,44 @@
     </section>
 
     <!-- get updates/modal trigger -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Stay in the loop</h2>
+                <p class="lead">Get the latest updates as they happen...</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="text-muted my-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione quidem impedit, ipsa architecto quod deserunt! Aperiam consequuntur ullam saepe voluptate debitis vitae. Soluta commodi alias esse, tenetur eaque mollitia facilis.
+                    </p>
+                    <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">Register for updates</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo tempore necessitatibus libero sapiente nostrum saepe molestiae qui alias, fugit dolores.</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g. mario@example.com">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script for the tooltip -->
     <script>
         const tooltips = document.querySelectorAll(".tt")
         tooltips.forEach(t => {
