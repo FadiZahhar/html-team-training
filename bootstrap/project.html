@@ -77,7 +77,12 @@
                     <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
                 </div>
                 <div class="col-md-5 text-center d-none d-md-block">
-                    <img src="./assets/ebook-cover.png" alt="ebook cover" class="img-fluid">
+
+                    <!-- tooltip -->
+                    <span class="tt" data-bs-placement="bottom" title="book">
+                                            <img src="./assets/ebook-cover.png" alt="ebook cover" class="img-fluid">
+
+                    </span>
                 </div>
             </div>
         </div>
@@ -361,5 +366,13 @@
             </div>
         </div>
     </section>
+
+    <!-- get updates/modal trigger -->
+    <script>
+        const tooltips = document.querySelectorAll(".tt")
+        tooltips.forEach(t => {
+            new bootstrap.tooltip(t)
+        })
+    </script>
 </body>
 </html>
