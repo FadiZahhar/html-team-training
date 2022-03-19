@@ -440,16 +440,31 @@ list-group-item
               <label for="query">Your query...</label>
             </div>
             <div class="mb-4 text-center">
+              <span class="tt" data-bs-placement="top" title="hello world">
+
               <button type="submit" class="btn btn-secondary">Submit</button>
+            </span>
+
             </div>
           </form>
         </div>
       </div>
     </div>
+    <div class="col-md-5 text-center d-none d-md-block">
+      <!-- tooltip -->
+      <span class="tt" data-bs-placement="bottom" title="hello world">
+        <img src="" class="img-fluid" alt="ebook">
+      </span>
+    </div>
   </section>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-
+<script>
+  const tooltips = document.querySelectorAll('.tt')
+  tooltips.forEach(t => {
+    new bootstrap.Tooltip(t)
+  })
+</script>
 </body>
 </html>
