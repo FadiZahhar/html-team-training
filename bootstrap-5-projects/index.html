@@ -65,7 +65,9 @@
                 <a href="#pricing" class="btn btn-secondary btn-lg">Buy now</a>
             </div>
             <div class="col-md-5 text-center d-none d-md-block">
+                    <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
                 <img src="https://raw.githubusercontent.com/iamshaunjp/bootstrap-5-tutorial/lesson-8/assets/ebook-cover.png" alt="ebook" class="img-fluid">
+                </span>
             </div>
         </div>
     </div>
@@ -357,6 +359,13 @@
                             <i class="bi bi-person-fill text-secondary"></i>
                         </span>
                         <input type="text" id="name" class="form-control" placeholder="e.g. Mario" />
+                        <!-- tooltip -->
+                        <span class="input-group-text">
+                            <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                                <i class="bi bi-question-circle text-muted"></i>
+                            </span>
+                        </span>
+                         
                     </div>
                     <label for="subject" class="form-label">What is your question about?</label>
                     <div class="mb-4 input-group">
@@ -386,5 +395,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+        <script>
+            const tooltips = document.querySelectorAll('.tt')
+            tooltips.forEach(t => {
+                new bootstrap.Tooltip(t)
+            })
+        </script>
 </body>
 </html>
