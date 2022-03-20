@@ -63,6 +63,10 @@
                 </h1>
                 <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#pricing" class="btn btn-secondary btn-lg">Buy now</a>
+ <!-- open sidebar / offcanvas -->
+                <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+                    Explore my other books
+                </a>
             </div>
             <div class="col-md-5 text-center d-none d-md-block">
                     <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
@@ -123,6 +127,11 @@
                         <a href="#" class="btn btn-outline-primary btn-lg mt-3">
                             Buy Now
                         </a>
+                       
+                        </div>
+                        
+                        <div class="col-md-5 text-center d-none d-md-block">
+                           
                     </div>
                 </div>
             </div>
@@ -143,7 +152,7 @@
             </div>
             <div class="col-lg-6">
 
-                <!-- accordion -->
+ <!-- accordion -->
                 <div class="accordion" id="chapters">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="heading-1">
@@ -360,13 +369,8 @@
                         </span>
                         <input type="text" id="name" class="form-control" placeholder="e.g. Mario" />
 
-                            <!-- open sidebar / offcanvas -->
-                            <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
-                                Explore my other books
-                            </a>
-                            </div>
-                            <div class="col-md-5 text-center d-none d-md-block">
-                        <!-- tooltip -->
+                           
+ <!-- tooltip -->
                         <span class="input-group-text">
                             <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
                                 <i class="bi bi-question-circle text-muted"></i>
@@ -452,6 +456,17 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In minima ducimus excepturi quasi tempore fugit
             quis voluptatibus aut error possimus, tenetur natus magni quam voluptatem quae eligendi repudiandae delectus
             eaque!</p>
+  <!-- dropdown -->
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="book-dropdown" data-bs-toggle="dropdown">
+                    Choose a book title
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+                    <li><a class="dropdown-item" href="#">Become a React Superhero</a></li>
+                    <li><a class="dropdown-item" href="#">Conquering Vue.js</a></li>
+                    <li><a class="dropdown-item" href="#">Levelling up Your Next.js</a></li>
+                </ul>
+            </div>
     </div>
 </div>
 
