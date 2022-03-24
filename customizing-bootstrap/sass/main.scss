@@ -20,10 +20,31 @@ $light: #fff9f1;
 @import "../node_modules/bootstrap/scss/mixins";
 
 // anything that depends on variables/mixins file defined below
+
 .btn-truncate {
   max-width: 100px;
   @include text-truncate;
 }
 
+// add colors to theme
+$custom-colors: (
+  "primary-light": #ffc8e0,
+  "secondary-light": #b9f8dc,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// remove colors from theme
+$theme-colors: map-remove($theme-colors, "danger");
+
 // import bootstrap whole sass lib (incorporates all above redefined vars & values)
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// .bg classes not automatically generated. As an example, manually add
+// .bg-custom-color
+
+.bg-primary-light {
+  background-color: var(--bs-primary-light);
+}
+.bg-secondary-light {
+  background-color: var(--bs-secondary-light);
+}
