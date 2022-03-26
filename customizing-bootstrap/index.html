@@ -27,7 +27,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Recipies</a>
                     </li>
-                    <li class="nav-item d-none d-lg-block">
+                    <li class="nav-item dis-none dis-lg-block">
                         <a class="btn btn-outline-primary ms-2" href="#">Login / Register</a>
                     </li>
                 </ul>
@@ -51,21 +51,34 @@
         <div class="container-lg">
             <div class="row align-items-center g-5">
                 <div class="col-md-6">
-                    <img class="img-fluid" src="./img/aub-dish.jpg" alt="recipe image">
+
+                    <!-- featured block component -->
+                    <div class="featured-block">
+                        <div class="featured-block-badges">
+                            <span class="badge bg-primary text-white">
+                                <i class="bi bi-heart-fill me-1"></i> Fan Fav
+                            </span>
+                            <span class="badge bg-primary text-white">
+                                <i class="bi bi-clock-fill me-1"></i> Quick Dish
+                            </span>
+                        </div>
+                        <img class="img-fluid" src="./img/aub-dish.jpg" alt="recipe image">
+                    </div>
+
                 </div>
                 <div class="col-md-6">
                     <p class="my-2">
-                        <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-                        <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-                        <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-                        <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-                        <i class="bi bi-hand-thumbs-up text-primary d-inline-block"></i>
+                        <i class="bi bi-hand-thumbs-up-fill text-primary dis-inline-block rotate-20"></i>
+                        <i class="bi bi-hand-thumbs-up-fill text-primary dis-inline-block rotate-20"></i>
+                        <i class="bi bi-hand-thumbs-up-fill text-primary dis-inline-block rotate-20"></i>
+                        <i class="bi bi-hand-thumbs-up-fill text-primary dis-inline-block rotate-20"></i>
+                        <i class="bi bi-hand-thumbs-up text-primary dis-inline-block rotate-20"></i>
                     </p>
                     <h1>Sweet Aubergine Bites</h1>
                     <p class="lead">Enjoy this fresh veggie classic on a summer's day.</p>
                     <h4>
                         <span class="badge bg-light text-secondary">
-                            <i class="bi bi-clock me-2 d-inline-block"></i> 20 mins
+                            <i class="bi bi-clock me-2 dis-inline-block"></i> 20 mins
                         </span>
                     </h4>
                     <div class="my-2">
@@ -112,7 +125,7 @@
                             molestias animi laudantium accusamus eaque excepturi, in sapiente. Cumque ducimus ratione
                             laborum explicabo quo dolorem tenetur asperiores maiores!</li>
                     </ol>
-                    <div class="p-3 mt-4 rounded text-center bg-pink-light text-pink-dark">
+                    <div class="p-3 mt-4 rounded text-center bg-pink-light text-pink-dark border border-2">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum quisquam asperiores
                             natus vero, iste veniam necessitatibus.</p>
                         <button class="btn btn-outline-primary">Edit Recipe</button>
@@ -123,12 +136,12 @@
     </section>
 
     <!-- similar dishes -->
-    <section class="d-none d-lg-block" id="similar">
+    <section class="dis-none dis-lg-block" id="similar">
         <div class="container-md bg-white pt-4 mb-5 mt-n5">
             <h4 class="text-center mb-4 display-7">Similar Recipes</h4>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-xl-3">
-                    <div class="card">
+                    <div class="card o-75 o-100-hover">
                         <img src="./img/aub-dish.jpg" class="card-img-top" alt="recipe img">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -139,7 +152,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3">
-                    <div class="card">
+                    <div class="card o-75 o-100-hover">
                         <img src="./img/aub-dish.jpg" class="card-img-top" alt="recipe img">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -150,7 +163,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3">
-                    <div class="card">
+                    <div class="card o-75 o-100-hover">
                         <img src="./img/aub-dish.jpg" class="card-img-top" alt="recipe img">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
