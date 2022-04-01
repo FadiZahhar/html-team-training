@@ -1,0 +1,16 @@
+//place here redefined variables
+$primary: #fc8320;
+$light: #e3e7c3;
+
+//import the functions and variables
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
+//custom theme values
+$custom-theme-values: (
+  'altdark': #545102,
+  'altlight': #cbddf0,
+);
+$theme-colors: map.merge($custom-theme-values, $theme-colors);
+
+@import '../node_modules/bootstrap/scss/bootstrap';
