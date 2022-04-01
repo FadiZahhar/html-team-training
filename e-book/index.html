@@ -80,7 +80,13 @@
             <a href="#pricing" class="btn btn-secondary btn-lg">Buy now</a>
           </div>
           <div class="col-md-5 text-center d-none d-md-block">
-            <img class="img-fluid" src="./imgs/ebook-cover.png" alt="" />
+            <span
+              class="tt"
+              data-bs-placement="bottom"
+              title="net ninja book cover"
+            >
+              <img class="img-fluid" src="./imgs/ebook-cover.png" alt="" />
+            </span>
           </div>
         </div>
       </div>
@@ -441,6 +447,15 @@
                   class="form-control"
                   placeholder="e.g. mario@example.com"
                 />
+                <span class="input-group-text">
+                  <span
+                    class="tt"
+                    data-bs-placement="bottom"
+                    title="enter an email address"
+                  >
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
               </div>
               <label for="name" class="form-label">Name:</label>
               <div class="mb-4 input-group">
@@ -453,6 +468,14 @@
                   class="form-control"
                   placeholder="e.g. Mario"
                 />
+                <span class="input-group-text">
+                  <span
+                    class="tt"
+                    data-bs-placement="bottom"
+                    title="daaa"
+                  >
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
               </div>
               <label for="subject" class="form-label"
                 >What is your question about?</label
@@ -489,5 +512,11 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const tooltips = document.querySelectorAll('.tt')
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t)
+      })
+    </script>
   </body>
 </html>
