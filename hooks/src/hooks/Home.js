@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import BlogList from "./BlogList";
 import Counter from './Counter'
 import ChangeTheme from "./ChangeTheme";
+ import Booklist from "./Booklist";
+ import BookContextProvider from "../contexts/BookContext";
+ import Data from "./Data";
 
 
 const Home = () => {
@@ -13,6 +16,7 @@ const Home = () => {
   
   const [blogs, setBlogs] = useState([])
   const [isPending, setIsPending]= useState(true);
+ 
 
   // const [blogs, setBlogs] = useState([ 
   //    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
@@ -89,6 +93,17 @@ setNumber(nameInputRef.current.value)
     <br/>
     <br/>
        <Counter/>
+       <br/>
+       <br/>
+        <div>
+         <span className="example2"> useCustomHook Example:</span>
+      <Data/>
+      </div>
+      <br/>
+        <span className="example"> useContext Example:</span>
+       <BookContextProvider >
+       <Booklist/>
+       </BookContextProvider>
     </>
   );
 }

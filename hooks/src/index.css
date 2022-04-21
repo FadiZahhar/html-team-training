@@ -103,5 +103,9 @@ font-size: 2rem;
 
 .example2{
   display: flex;
-  margin-left: 23rem;
+
+}
+
+.book-items{
+  list-style: none;
 }
