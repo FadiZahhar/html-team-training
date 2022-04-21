@@ -100,3 +100,8 @@ font-size: 2rem;
  height: 3rem;
  border-radius: 25px;
 }
+
+.example2{
+  display: flex;
+  margin-left: 23rem;
+}

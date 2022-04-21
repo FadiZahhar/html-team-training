@@ -5,7 +5,6 @@ const BlogList = ({ blogs, title, handleDelete}) => {
       <div className="blog-list">
       
       <h2>{ title }</h2>
-          <span className="example"> useState Example</span>
       {blogs.map(blog => (
         <div className="blog-preview" key={blog.id} >
           <h2>{ blog.title }</h2>
@@ -14,8 +13,6 @@ const BlogList = ({ blogs, title, handleDelete}) => {
         </div>
       ))}
     </div>
-
-    
     </>
   );
 }

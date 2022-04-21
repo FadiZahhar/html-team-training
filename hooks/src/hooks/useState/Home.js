@@ -8,11 +8,11 @@ const Home = () => {
 
  
   const [number, setNumber]= useState('');
-  const [isPending, setIsPending]= useState(true);
-
+  
   const nameInputRef = useRef();
-
+  
   const [blogs, setBlogs] = useState([])
+  const [isPending, setIsPending]= useState(true);
 
   // const [blogs, setBlogs] = useState([ 
   //    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
@@ -56,6 +56,7 @@ setNumber(nameInputRef.current.value)
     
     <div className="home">
     { isPending && <div>Loading...</div> }
+      <span className="example"> useState Example</span>
       {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>}
        <button onClick={() => setName('luigi')}>change name</button>
        <p>{name}</p>
