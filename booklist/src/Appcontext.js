@@ -4,8 +4,8 @@ export const Appcontext = createContext()
 const AppcontextProvider = ({ children }) => {
   const [books, setBooks] = useState([
     { title: 'black swan', author: 'jack hiss', id: 1 },
-    { title: 'white swan', author: 'mary jadk', id: 1 },
-    { title: 'red swan', author: 'jiff lkad', id: 1 },
+    { title: 'white swan', author: 'mary jadk', id: 5 },
+    { title: 'red swan', author: 'jiff lkad', id: 4 },
   ])
   const addBook = (title, author) => {
     setBooks([...books, { title, author, id: uuidv4() }])
