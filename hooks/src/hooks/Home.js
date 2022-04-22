@@ -9,7 +9,6 @@ import ChangeTheme from "./ChangeTheme";
 
 const Home = () => {
 
- 
   const [number, setNumber]= useState('');
   
   const nameInputRef = useRef();
@@ -31,12 +30,16 @@ const Home = () => {
     setBlogs(newBlogs)
   }
 
+
+  // useEffect example
+
   //   useEffect(() => {
   //   console.log('use effect ran');
   //   console.log(blogs);
   // }, [blogs])
 
 
+{/* useEffect for fetching data */}
   useEffect(() => {
     setTimeout(() => {
     fetch('https://jsonplaceholder.typicode.com/users/')
@@ -59,12 +62,24 @@ setNumber(nameInputRef.current.value)
     <>
     
     <div className="home">
-    { isPending && <div>Loading...</div> }
-      <span className="example"> useState Example</span>
-      {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>}
-       <button onClick={() => setName('luigi')}>change name</button>
+
+{/* useState Example */}
+ <span className="example"> useState  Example</span>
+        <button onClick={() => setName('luigi')}>change name</button>
        <p>{name}</p>
        <br/>
+       <br/>
+
+
+{/* useEffect for fetching data */}
+
+    { isPending && <div>Loading...</div> }
+      <span className="example"> useState + useEffect Example</span>
+       <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
+
+
+ {/* useRef Example */}
+     
        <div className="input-style">
            <span className="example"> useRef Example:</span>
         <label 
@@ -89,17 +104,21 @@ setNumber(nameInputRef.current.value)
     <br/>
     <br/>
     <br/>
+    {/* useMemo example */}
     <ChangeTheme/>
     <br/>
     <br/>
+    {/* useReducer example */}
        <Counter/>
        <br/>
        <br/>
         <div>
+    {/* useCustom Hook Exapmple */}
          <span className="example2"> useCustomHook Example:</span>
       <Data/>
       </div>
       <br/>
+      {/* useContext Example */}
         <span className="example"> useContext Example:</span>
        <BookContextProvider >
        <Booklist/>
